@@ -1,0 +1,69 @@
+.field__tag {
+  font-family: $font-open;
+  font-size: $txt-sm;
+  color: $green-dark;
+  line-height: 20px;
+  text-transform: capitalize;
+  margin: 20px 0 7px 0;
+}
+
+.tag-name {
+  margin-top: 15px;
+}
+
+.tag-photo {
+  text-transform: none;
+}
+
+.form__field {
+  border: solid 1px $green-light;
+  width: 281px;
+  height: 30px;
+  font-family: $font-open;
+  font-size: $txt-sm;
+  color: $color-text;
+  padding-left: 10px;
+  &::placeholder {
+    color:$grey-light-holder;
+  }
+}
+
+.photo__box {
+  display: flex;
+}
+
+.form__field-photo {
+  @include button-reset();
+  background-color: $orange;
+  font-family: $font-open;
+  font-size: $txt-sm;
+  color: $white;
+  line-height: 20px;
+  padding: 5px 22px;
+  border-radius: 3px;
+  box-shadow: $box-shadow-button;
+  width: 140px;
+  height: 30px;
+}
+
+.preview__photo {
+  border: solid 1px $green-light;
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid #ccc;
+}
+
+.fill__items {
+  display: flex;
+  flex-direction: column;
+}
+
+.no-visible {
+  opacity: 0;
+  width: 0.5px;
+  height: 0.5px;
+}

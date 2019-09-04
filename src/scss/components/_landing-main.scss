@@ -1,0 +1,113 @@
+.page__main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $grey-light;
+  text-align: center;
+  flex-grow:1;
+}
+
+.main__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.main__wrapper {
+  padding-top: 95px;
+}
+
+.main__title-container {
+  background-color: $grey-light;
+  text-align: center;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.h1__title {
+  background-image: url(../../images/tarjetas-molonas.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  color: white;
+  height: 1px;
+  padding-top: 107px;
+  overflow: hidden;
+  margin: 0 35px;
+  @media all and (min-width: $tablet) {
+    width: 420px;
+  }
+}
+
+.main__description {
+  text-align: center;
+  margin: 35px 28px 0;
+}
+
+.description__title {
+  font-size: $txt-lg;
+  font-family: $font-merriweather;
+  color: $color-landing-title;
+  @media all and (min-width: $tablet) {
+    font-size: $txt-xxl;
+  }
+}
+
+.description__text {
+  font-size: $txt-xs;
+  font-family: $font-open;
+  color: $color-landing-description;
+  @media all and (min-width: $tablet) {
+    font-size: $txt-md;
+  }
+}
+
+.main__steps {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  font-family: $font-open;
+  font-size: $txt-xs;
+  border: 1.5px solid $orange;
+  border-radius: 4px;
+  color: $grey-dark;
+  padding: 15px 20px 18px;
+  margin: 18px 25.6px 48.6px;
+  @media all and (min-width: $tablet) {
+    font-size: $txt-md;
+    margin-top: 27px;
+  }
+}
+
+.item__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item__icon {
+  color: $orange;
+  font-size: $txt-icon;
+  @media all and (min-width: $tablet) {
+    font-size: $txt-icon-tablet;
+  }
+}
+
+.start__link {
+  text-decoration: none;
+  font-family: $font-open;
+  font-size: $txt-md;
+  text-transform: uppercase;
+  color: $white;
+  background-color: $blue;
+  padding: 10px 20px;
+  border-radius: 21px;
+  align-self: center;
+  margin-bottom: 35px;
+  @media all and (min-width: $tablet) {
+    margin-bottom: 90px;
+  }
+}

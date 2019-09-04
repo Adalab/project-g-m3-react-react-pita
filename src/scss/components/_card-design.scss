@@ -1,0 +1,40 @@
+.collapsable__colors {
+  margin: 17px 0 0 0;
+}
+
+.palette {
+  display: flex;
+  justify-content: space-between;
+}
+
+.palette__label {
+  display: block;
+  font-family: $font-open;
+  font-size: $txt-sm;
+  color: $grey-dark;
+  text-transform: uppercase;
+}
+
+.colors {
+  list-style: none;
+  display: flex;
+  margin: 10px;
+  padding: 0;
+}
+
+.square-color {
+  width: 30px;
+  height: 1px;
+  padding-top: 24px;
+  overflow: hidden;
+}
+
+.txt__color--orange {
+  color: $orange;
+}
+
+.input-box {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

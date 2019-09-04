@@ -1,0 +1,30 @@
+.page__footer {
+  background-color:$white;
+  @include flex-center;
+  flex-direction: column;
+  width:100%;
+  height:110px;
+  border-top: solid 1px #d8d8d8;
+  @media all and (min-width:$tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+  }
+}
+
+.footer__copyright {
+  color:#6b6b6b;
+  font-family: 'Open Sans', sans-serif;
+  margin:18px 61px 12px;
+  font-size: 14px;
+  @media all and (min-width:$tablet) {
+    margin:0 41px;
+  }
+}
+
+.footer__logo {
+  width: 103px;
+  height: 40px;
+  margin:10px 41px;
+}

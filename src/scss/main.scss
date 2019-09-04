@@ -1,0 +1,29 @@
+@import 'core/variables';
+@import 'core/mixins';
+@import 'components/landing-main';
+@import 'components/footer';
+@import 'components/card-header';
+@import 'components/card-main';
+@import 'components/card-preview';
+@import 'components/card-collapsable';
+@import 'components/card-design';
+@import 'components/card-fill';
+@import 'components/card-submit';
+@import 'core/class-utils';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.page__cards {
+  @media all and (min-width: $tablet) {
+    min-height: 100vh;
+    @include flex-between-column;
+  }
+}
+
+.page {
+  min-height: 100vh;
+  @include flex-between-column;
+}

@@ -1,0 +1,54 @@
+.form__submit {
+    text-align: center;
+}
+
+.form__button {
+    margin: 20px 0 0;
+}
+
+.fa-address-card {
+    font-size: $txt-xl;
+}
+
+.form__button-text {
+    @include font-lg;
+    color: $color-text-button;
+    text-transform: uppercase;
+}
+
+.form__success {
+    text-align: center;
+    padding: 20px 0 30px;
+}
+
+.form__success-twitter {
+    border-top: solid 1px $grey-line;
+    padding-top: 20px;
+    margin-top: 30px;
+}
+
+.succes__title {
+    margin: 0;
+    text-transform: none;
+    @include font-lg;
+}
+
+.success__link {
+    display: block;
+    margin: 10px 0;
+    @include link-none($orange);
+    @include font-lg;
+    font-size: $txt-xs;
+}
+
+.success__button-twitter {
+    font-family: $font-open;
+    font-size: $txt-sm;
+    display: flex;
+    margin: 0 auto;
+}
+
+.fa-twitter {
+    font-size: $txt-lg;
+    margin-right: 10px;
+}

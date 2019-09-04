@@ -1,0 +1,60 @@
+/*medias-sizes and breakpoints*/
+$mobile: 320px;
+$tablet: 768px;
+$desktop: 1024px;
+
+//colors
+$beige-light: #f9f4dc;
+$black: #000000;
+$blue: #438792;
+$blue-light: #a0c0cf;
+$blue-dark: #3e5b65;
+$blue-twitter: #00a0f5;
+$green-light: #a2deaf;
+$green-dark: #114e4e;
+$grey: #6b6b6b;
+$grey-light: #f5f5f5;
+$grey-off: #d5d5d5;
+$grey-dark: #54585a;
+$grey-line:#d8d8d8;
+$grey-light-holder:#c5c5c5;
+$grey-pale: #dde9ed;
+$orange: #e17334;
+$red: #bd1010;
+$red-dark: #420101;
+$tomato: #e95626;
+$silver: #bfcdd0;
+$white: #ffffff;
+$yellow: #eab052;
+
+//text and bg colors
+$grey-bg-landing: $grey-light;
+$color-bg-landing-button: $blue;
+$color-text-button: $white;
+$color-landing-title: $orange;
+$color-landing-description: $green-dark;
+$color-text: $grey-dark;
+$color-footer-text: $grey;
+$color-icon: $orange;
+$color-arrow: $grey-dark;
+$color-bg-card-button: $orange;
+
+//font family
+$font-open: "Open Sans", sans-serif;
+$font-montserrat: 'Montserrat', sans-serif;
+$font-merriweather: 'Merriweather', serif;
+
+//text sizes
+$txt-xs: 12px;
+$txt-sm: 14px;
+$txt-md: 16px;
+$txt-lg: 18px;
+$txt-xl: 20px;
+$txt-xxl: 24px;
+$txt-icon: 22.4px;
+$txt-icon-tablet: 28px;
+
+//box-shadows
+$box-shadow-button: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+$box-shadow-button-card: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
+$box-shadow-card: 0 1px 10px 0 $black, 0 1px 3px 0 rgba(0, 0, 0, 0.35);

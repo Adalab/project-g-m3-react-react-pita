@@ -1,0 +1,51 @@
+//bg colors
+@mixin bg-gradient($from, $to) {
+  background-image: linear-gradient(to bottom, $from, $to);
+}
+
+@mixin bg-img ($url){
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+//text-format
+@mixin link-none ($color) {
+  color: $color;
+  text-decoration: none;
+}
+
+@mixin font-lg {
+  font-family: $font-open;
+  font-size: $txt-lg;
+  font-weight: 600;
+}
+
+//positions
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+}
+
+//buttons
+@mixin button-reset {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@mixin button-format ($bg, $radius, $shadow) {
+  background-color: $bg;
+  border-radius: $radius;
+  box-shadow: $shadow;
+}
