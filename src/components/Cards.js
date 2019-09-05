@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from './Header';
 
 // const linkAdalab = 'url(https://adalab.es/)';
 
@@ -9,9 +10,7 @@ class Cards extends React.Component {
     return (
       <React.Fragment>
         <div className="page__cards">
-          <header className="page__header">
-            <h1 className="header__title">Awesome profile-cards</h1>
-          </header>
+         <Header />
           <main className="card__main">
             <section className="card-preview">
               <div className="card-preview__container">
