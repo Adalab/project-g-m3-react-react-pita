@@ -1,5 +1,7 @@
 import React from 'react';
 
+// const linkAdalab = 'url(https://adalab.es/)';
+
 
 
 class Cards extends React.Component {
@@ -151,13 +153,12 @@ class Cards extends React.Component {
                   </div>
                   <div className="form__success-twitter collapsable__container hidden">
                     <h2 className="succes__title txt__color--grey-dark">La tarjeta ha sido creada con exito</h2>
-                    <a href="https://adalab.es/" className="success__link" {/*target="_blank"*/}></a>
-                    <a href="https://adalab.es/" className="success__button-twitter button-twitter twitter-share-button"
-                  {/*target="_blank"*/}>
-                      <i className="fab fa-twitter "></i>
+                    {/*<a href="https://adalab.es/" className="success__link" target="_blank"></a>*/}
+                    {/*<a href="https://adalab.es/" className="success__button-twitter button-twitter twitter-share-button"
+                  target="_blank"
+                     <i className="fab fa-twitter "></i>
                       <span className="success__button-text">Compartir en twitter</span>
-                  </a>
-
+    </a>*/}
                   </div>
                 </div>
               </div>
