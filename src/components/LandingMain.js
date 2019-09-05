@@ -1,5 +1,5 @@
 import React from "react";
-import logoAdalab from "./../images/logo-adalab-80px.png";
+import Footer from './Footer';
 
 class LandingMain extends React.Component {
   render() {
@@ -49,24 +49,8 @@ class LandingMain extends React.Component {
               </a>
             </div>
           </main>
-          <footer className="page__footer">
-            {" "}
-            <span className="footer__copyright">
-              Awesome profile-cards @2019
-            </span>
-            <a
-              className="footer__link"
-              href="https://adalab.es/"
-              target="blank"
-            >
-              <img
-                className="footer__logo"
-                src={logoAdalab}
-                alt="Logotipo de Adalab"
-              />
-            </a>
-          </footer>
         </div>
+		<Footer />
       </React.Fragment>
     );
   }
