@@ -5,9 +5,7 @@ import CardForm from './CardForm';
 
 // const linkAdalab = 'url(https://adalab.es/)';
 
-const colorPallete1 = ['#104E43', '#438792', '#a2deaf'];
-const colorPallete2 = ['#420101', '#bd1010', '#e95626'];
-const colorPallete3 = ['#3e5b65', '#eab052', '#a0c0cf'];
+
 
 class Cards extends React.Component {
   render() {
@@ -17,7 +15,7 @@ class Cards extends React.Component {
           <Header />
           <main className="card__main">
             <CardPreview />
-            <CardForm color={colorPallete1} color2={colorPallete2} color3={colorPallete3} />
+            <CardForm />
           </main>
           <footer className="page__footer"> <span className="footer__copyright">Awesome profile-cards @2019</span>
             <a className="footer__link"
