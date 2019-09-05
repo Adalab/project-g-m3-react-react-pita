@@ -1,13 +1,12 @@
 import React  from 'react';
+import Reset from './Reset';
 
 class CardPreview extends React.Component {
     render() {
         return(
             <section className="card-preview">
             <div className="card-preview__container">
-              <button className="button--reset"> <i className="far fa-trash-alt"></i>
-                <span className="button__text">Reset</span>
-              </button>
+              <Reset />
               <div className="preview-card js__preview-card">
                 <div className="preview-card__title-container">
                   <h4 className="preview-card__name">Nombre Apellido</h4>
