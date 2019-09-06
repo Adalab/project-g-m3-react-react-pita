@@ -4,7 +4,7 @@ import CardPreview from './CardPreview';
 import CardForm from './CardForm';
 import Footer from './Footer';
 
-// const linkAdalab = 'url(https://adalab.es/)';
+const linkAdalab = 'https://adalab.es/';
 
 const colorPallete1 = ['#104E43', '#438792', '#a2deaf'];
 const colorPallete2 = ['#420101', '#bd1010', '#e95626'];
@@ -18,9 +18,11 @@ class Cards extends React.Component {
           <Header />
           <main className="card__main">
             <CardPreview />
-            <CardForm color={colorPallete1} color2={colorPallete2} color3={colorPallete3}/>
+            <CardForm 
+              color={colorPallete1} color2={colorPallete2} color3={colorPallete3} 
+            />
           </main>
-          <Footer />
+          <Footer linkAdalab={linkAdalab}/>
         </div>
       </React.Fragment>
     );

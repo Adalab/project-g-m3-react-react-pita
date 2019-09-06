@@ -12,7 +12,7 @@
 				</span>
 				<a
 				className="footer__link"
-				href="https://adalab.es/"
+				href={this.props.linkAdalab}
 				target="blank"
 				>
 				<img
