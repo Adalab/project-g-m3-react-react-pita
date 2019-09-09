@@ -5,7 +5,9 @@ class Card extends React.Component {
         return (
             <div className="preview-card js__preview-card">
                 <div className="preview-card__title-container">
-					<h4 className="preview-card__name">{this.props.defaultInput.name}</h4>
+					<h4 className="preview-card__name">
+                        {this.props.defaultInput.name}
+                    </h4>
                     <h5 className="preview-card__career">{this.props.defaultInput.job}</h5>
                 </div>
                 <div className="preview-card__img js__profile-image" style = {{backgroundImage: this.props.defaultInput.image}}></div>

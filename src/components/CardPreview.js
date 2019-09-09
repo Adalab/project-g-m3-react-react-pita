@@ -8,7 +8,8 @@ class CardPreview extends React.Component {
             <section className="card-preview">
             <div className="card-preview__container">
               <Reset />
-              <Card defaultInput = {this.props.defaultInput} />
+              <Card defaultInput = {this.props.defaultInput}
+              onChangeListener = {this.props.onChangeListener} />
             </div>
           </section>
         )

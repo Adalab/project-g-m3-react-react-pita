@@ -57,7 +57,7 @@ class CardForm extends React.Component {
                     <div className="fill__items items-name">
                         <label className="field__tag tag-name" htmlFor="FullName">nombre completo</label>
                         <input className="form__field form__field-name" type="text"
-                            id="FullName" name="FullName" placeholder="Ej: Sally Jill" required />
+                            id="FullName" name="FullName" placeholder="Ej: Sally Jill" required onChange={this.props.onChangeListener}/>
                     </div>
                     <div className="fill__items items-job">
                         <label className="field__tag tag-job" htmlFor="job">puesto</label>

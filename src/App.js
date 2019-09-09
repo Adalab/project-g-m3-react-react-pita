@@ -15,10 +15,25 @@ const defaultInput = {
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+      this.value = '';
+      this.onChangeListener = this.onChangeListener.bind(this);
+      // console.log('holi', this.value);
+  }
+
+  onChangeListener(event) {
+    const value = event.target.value;
+    this.value = value;
+    console.log('holi');
+  }
+
   render() {
     return (
     // <LandingMain />
-    <Cards defaultInput = {defaultInput}/>
+    <Cards defaultInput = {defaultInput}
+      onChangeListener = {this.onChangeListener}
+    />
     );
   }
 }
