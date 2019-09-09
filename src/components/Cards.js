@@ -17,7 +17,7 @@ class Cards extends React.Component {
         <div className="page__cards">
           <Header />
           <main className="card__main">
-            <CardPreview />
+            <CardPreview defaultInput = {this.props.defaultInput} />
             <CardForm 
               color={colorPallete1} color2={colorPallete2} color3={colorPallete3} 
             />

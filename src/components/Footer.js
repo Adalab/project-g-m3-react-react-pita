@@ -1,5 +1,7 @@
 	import React from "react";
 	import logoAdalab from "./../images/logo-adalab-80px.png";
+	import PropTypes from 'prop-types';
+
 
 	class Footer extends React.Component {
 		render() {
@@ -26,4 +28,8 @@
 		  ); 
 		  }
 		}
+
+		Footer.propTypes = {
+			linkAdalab: PropTypes.string
+		}; 
 	export default Footer; 

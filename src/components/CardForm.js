@@ -1,5 +1,6 @@
 import React from 'react';
 import Collapsables from './Collapsables';
+import PropTypes from 'prop-types'; 
 
 class CardForm extends React.Component {
 	render() {
@@ -122,5 +123,10 @@ class CardForm extends React.Component {
 		)
 	}
 }
+
+CardForm.propTypes = {
+	color: PropTypes.array
+	// linkAdalab: PropTypes.string, 
+}; 
 
 export default CardForm; 

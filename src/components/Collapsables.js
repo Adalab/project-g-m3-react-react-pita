@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 
 
@@ -10,6 +11,10 @@ class Collapsables extends React.Component {
         </React.Fragment>
       );
   }
+}
+
+Collapsables.propTypes = {
+	children: PropTypes.element.isRequired
 }
 
 export default Collapsables;

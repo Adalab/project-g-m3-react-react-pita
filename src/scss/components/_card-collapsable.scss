@@ -21,9 +21,9 @@
 .collapsable__item {
   height: 0;
   padding: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: opacity linear 0.5s;
+//   overflow: hidden;
+  opacity: 1;
+//   transition: opacity linear 0.5s;
 }
 
 .collapsable--visible {
