@@ -12,7 +12,7 @@ class Card extends React.Component {
         </div>
         <div className="preview-card__img js__profile-image" style={{ backgroundImage: `url(${this.props.defaultInput.image})` }}></div>
         <ul className="preview-card__social-list">
-          <li className="social-list__item hidden"><a href="#phone" target="_blank" className="social-list__link phone__link">
+          <li className={`social-list__item ${(this.props.phone) ? '' : 'hidden'}`}><a href="#phone" target="_blank" className="social-list__link phone__link">
             <i className="fas fa-mobile-alt social-list__icon"></i>
           </a>
           </li>

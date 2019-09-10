@@ -18,40 +18,22 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name : '',
+      palette : 1, 
+      FullName : '',
       job : '',
-      phone : ''
+      phone : '',
+      mail : '',
+      linkedin : '',
+      github : ''
     }
     this.onKeyUpListener = this.onKeyUpListener.bind(this);
-    this.onKeyUpListenerJob = this.onKeyUpListenerJob.bind(this);
-    this.onKeyUpListenerPhone = this.onKeyUpListenerPhone.bind(this);
-
-
   }
 
   onKeyUpListener(event) {
     const name = event.currentTarget.value;
+    const id = event.currentTarget.id;
     this.setState({
-      name : name
-    });
-  }
-
-  onKeyUpListenerJob(event) {
-    const job = event.currentTarget.value;
-    this.setState({
-      job : job
-    });
-  }
-
-  onKeyUpListenerPhone(event) {
-    const phone = event.currentTarget.value;
-    this.setState((prevState) => {
-      let newPhone;
-      if(prevState.phone === ''){
-        newPhone = phone;
-      }else{
-        newPhone = '';
-      }
+      [id] : name
     });
   }
 
@@ -60,11 +42,13 @@ class App extends Component {
       // <LandingMain />
       <Cards
         defaultInput={defaultInput}
-        name={this.state.name}
+        name={this.state.FullName}
         job={this.state.job}
+        phone={this.state.phone}
+        mail={this.state.mail}
+        linkedin={this.state.linkedin}
+        github={this.state.github}
         onKeyUpListener={this.onKeyUpListener}
-        onKeyUpListenerJob={this.onKeyUpListenerJob}
-        onKeyUpListenerPhone={this.onKeyUpListenerPhone}
       />
     );
   }

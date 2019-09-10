@@ -19,14 +19,16 @@ class Cards extends React.Component {
           <main className="card__main">
             <CardPreview
               defaultInput = {this.props.defaultInput}
-              name={this.props.name}
+              name={this.props.FullName}
               job={this.props.job}
+              phone={this.props.phone}
+              mail={this.props.mail}
+              linkedin={this.props.linkedin}
+              github={this.props.github}
                />
             <CardForm 
               color={colorPallete1} color2={colorPallete2} color3={colorPallete3} 
               onKeyUpListener={this.props.onKeyUpListener}
-              onKeyUpListenerJob={this.props.onKeyUpListenerJob}
-
             />
           </main>
           <Footer linkAdalab={linkAdalab}/>
