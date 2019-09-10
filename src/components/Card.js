@@ -8,7 +8,7 @@ class Card extends React.Component {
           <h4 className="preview-card__name">
             {(this.props.name) ? this.props.name : this.props.defaultInput.name}
           </h4>
-          <h5 className="preview-card__career">{this.props.defaultInput.job}</h5>
+          <h5 className="preview-card__career">{(this.props.job) ? this.props.job : this.props.defaultInput.job}</h5>
         </div>
         <div className="preview-card__img js__profile-image" style={{ backgroundImage: `url(${this.props.defaultInput.image})` }}></div>
         <ul className="preview-card__social-list">

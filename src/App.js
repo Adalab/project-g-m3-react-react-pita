@@ -13,21 +13,32 @@ const defaultInput = {
   image: DefaultImg,
 }
 
+
 class App extends Component {
   constructor(props) {
     super(props);
-    /*this.state = {
-      defaultInput: defaultInput
-    }*/
-    this.name = '';
+    this.state = {
+      name : '',
+      job : '',
+      phone : ''
+    }
     this.onKeyUpListener = this.onKeyUpListener.bind(this);
+    this.onKeyUpListenerJob = this.onKeyUpListenerJob.bind(this);
+
   }
 
   onKeyUpListener(event) {
     const name = event.currentTarget.value;
-    this.name = name;
-    console.log(this.name);
-    this.forceUpdate();
+    this.setState({
+      name : name
+    });
+  }
+
+  onKeyUpListenerJob(event) {
+    const job = event.currentTarget.value;
+    this.setState({
+      job : job
+    });
   }
 
   render() {
@@ -35,8 +46,11 @@ class App extends Component {
       // <LandingMain />
       <Cards
         defaultInput={defaultInput}
-        name={this.name}
+        name={this.state.name}
+        job={this.state.job}
         onKeyUpListener={this.onKeyUpListener}
+        onKeyUpListenerJob={this.onKeyUpListenerJob}
+
       />
     );
   }

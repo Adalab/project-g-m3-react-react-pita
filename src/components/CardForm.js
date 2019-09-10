@@ -62,7 +62,7 @@ class CardForm extends React.Component {
                     <div className="fill__items items-job">
                         <label className="field__tag tag-job" htmlFor="job">puesto</label>
                         <input className="form__field form__field-job" type="text" id="job"
-                            name="job" placeholder="Ej: Front-end unicorn" required />
+                            name="job" placeholder="Ej: Front-end unicorn" onKeyUp={this.props.onKeyUpListenerJob} required />
                     </div>
                     <div className="fill__items items-photo">
                         <label className="field__tag tag-photo" htmlFor="img-selector">Imagen de perfil</label>

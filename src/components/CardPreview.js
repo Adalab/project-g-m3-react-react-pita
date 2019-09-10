@@ -10,7 +10,9 @@ class CardPreview extends React.Component {
               <Reset />
               <Card 
               defaultInput = {this.props.defaultInput}
-              name={this.props.name} />
+              name={this.props.name}
+              job={this.props.job}
+               />
             </div>
           </section>
         )
