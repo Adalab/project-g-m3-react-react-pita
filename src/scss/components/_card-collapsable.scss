@@ -1,6 +1,7 @@
-.collapsable {
+.collapsable  {
   border: none;
   border-bottom: solid 1px $grey-line;
+  padding: 0 0 30px;
 }
 
 .collapsable__header {
@@ -19,16 +20,17 @@
 }
 
 .collapsable__item {
-  height: 0;
+  //height: 0;
   padding: 0;
 //   overflow: hidden;
   opacity: 1;
 //   transition: opacity linear 0.5s;
+ 
 }
 
 .collapsable--visible {
   height: auto;
-  padding: 0 0 30px;
+  //padding: 0 0 30px;
   opacity: 1;
 }
 
