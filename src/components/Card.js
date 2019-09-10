@@ -16,15 +16,15 @@ class Card extends React.Component {
             <i className="fas fa-mobile-alt social-list__icon"></i>
           </a>
           </li>
-          <li className="social-list__item hidden"><a href="#email" target="_blank" className="social-list__link email__link">
+          <li className={`social-list__item ${(this.props.mail) ? '' : 'hidden'}`}><a href="#email" target="_blank" className="social-list__link email__link">
             <i className="far fa-envelope social-list__icon"></i>
           </a>
           </li>
-          <li className="social-list__item hidden"> <a href="#linkedin" target="_blank" className="social-list__link linkedin__link">
+          <li className={`social-list__item ${(this.props.linkedin) ? '' : 'hidden'}`}> <a href="#linkedin" target="_blank" className="social-list__link linkedin__link">
             <i className="fab fa-linkedin-in social-list__icon"></i>
           </a>
           </li>
-          <li className="social-list__item hidden"> <a href="#github" target="_blank" className="social-list__link github__link">
+          <li className={`social-list__item ${(this.props.github) ? '' : 'hidden'}`}> <a href="#github" target="_blank" className="social-list__link github__link">
             <i className="fab fa-github-alt social-list__icon"></i>
           </a>
 

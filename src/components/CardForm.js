@@ -80,18 +80,18 @@ class CardForm extends React.Component {
                         <div className="fill__items items-email">
                             <label className="field__tag tag-mail" htmlFor="mail">email</label>
                             <input className="form__field form__field-mail" type="email"
-                                id="mail" name="mail" placeholder="Ej:sally-hill@gmail.com" required />
+                                id="mail" name="mail" placeholder="Ej:sally-hill@gmail.com" onKeyUp={this.props.onKeyUpListener} required />
                         </div>
                     </div>
                     <div className="fill__items items-linkedin">
                         <label className="field__tag tag-linkedin" htmlFor="linkedin">linkedin</label>
                         <input className="form__field form__field-linkedin" type="text"
-                            id="linkedin" name="linkedin" placeholder="Ej:sally.hill" required />
+                            id="linkedin" name="linkedin" placeholder="Ej:sally.hill" onKeyUp={this.props.onKeyUpListener} required />
                     </div>
                     <div className="fill__items items-github">
                         <label className="field__tag tag-github" htmlFor="github">github</label>
                         <input className="form__field form__field-github" type="text"
-                            id="github" name="github" placeholder="Ej:@sally-hill" required />
+                            id="github" name="github" placeholder="Ej:@sally-hill" onKeyUp={this.props.onKeyUpListener} required />
                     </div>
                 </div>
             </fieldset>
