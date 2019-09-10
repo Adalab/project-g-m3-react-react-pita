@@ -17,10 +17,12 @@ class Cards extends React.Component {
         <div className="page__cards">
           <Header />
           <main className="card__main">
-            <CardPreview defaultInput = {this.props.defaultInput}
-            onChangeListener = {this.props.onChangeListener} />
+            <CardPreview
+              defaultInput = {this.props.defaultInput}
+              name={this.props.name} />
             <CardForm 
               color={colorPallete1} color2={colorPallete2} color3={colorPallete3} 
+              onKeyUpListener={this.props.onKeyUpListener}
             />
           </main>
           <Footer linkAdalab={linkAdalab}/>

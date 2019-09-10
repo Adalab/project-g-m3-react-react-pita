@@ -16,7 +16,7 @@ class CardForm extends React.Component {
                     <label className="palette__label" htmlFor="p1">colores</label>
                     <div className="palette__container-colors">
                         <div className="input-box">
-                            <input className="palette__radio js__radio1" id="p1" type="radio" value="1" name="palette" checked />
+                            <input className="palette__radio js__radio1" id="p1" type="radio" value="1" name="palette" />
                             <ul className="colors">
                                 <li className="square-color" style={{ backgroundColor: this.props.color[0] }}>dark green blue</li>
                                 <li className="square-color" style={{ backgroundColor: this.props.color[1] }}>dirty blue</li>
@@ -57,7 +57,7 @@ class CardForm extends React.Component {
                     <div className="fill__items items-name">
                         <label className="field__tag tag-name" htmlFor="FullName">nombre completo</label>
                         <input className="form__field form__field-name" type="text"
-                            id="FullName" name="FullName" placeholder="Ej: Sally Jill" required onChange={this.props.onChangeListener}/>
+                            id="FullName" name="FullName" placeholder="Ej: Sally Jill" required onKeyUp={this.props.onKeyUpListener}/>
                     </div>
                     <div className="fill__items items-job">
                         <label className="field__tag tag-job" htmlFor="job">puesto</label>
