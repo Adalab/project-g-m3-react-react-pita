@@ -68,6 +68,7 @@ class App extends Component {
         mail={this.state.mail}
         linkedin={this.state.linkedin}
         github={this.state.github}
+        palette={this.state.palette}
         namePalette={this.state.namePalette}
         onKeyUpListener={this.onKeyUpListener}
         onClickPalette={this.onClickPalette}
