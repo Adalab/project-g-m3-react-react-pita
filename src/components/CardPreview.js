@@ -11,7 +11,7 @@ class CardPreview extends React.Component {
               <Card 
               defaultInput = {this.props.defaultInput}
               palette={this.props.palette}
-              name={this.props.FullName}
+              FullName={this.props.FullName}
               job={this.props.job}
               phone={this.props.phone}
               mail={this.props.mail}

@@ -62,7 +62,7 @@ class App extends Component {
       // <LandingMain />
       <Cards
         defaultInput={defaultInput}
-        name={this.state.FullName}
+        FullName={this.state.FullName}
         job={this.state.job}
         phone={this.state.phone}
         mail={this.state.mail}

@@ -19,7 +19,7 @@ class Cards extends React.Component {
           <main className="card__main">
             <CardPreview
               defaultInput = {this.props.defaultInput}
-              name={this.props.FullName}
+              FullName={this.props.FullName}
               job={this.props.job}
               phone={this.props.phone}
               mail={this.props.mail}
