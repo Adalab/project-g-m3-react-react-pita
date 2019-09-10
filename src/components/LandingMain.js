@@ -1,6 +1,8 @@
 import React from "react";
 import Footer from './Footer';
 
+const linkAdalab = 'https://adalab.es/';
+
 class LandingMain extends React.Component {
   render() {
     return (
@@ -50,7 +52,7 @@ class LandingMain extends React.Component {
             </div>
           </main>
         </div>
-		<Footer />
+		<Footer linkAdalab={linkAdalab}/>
       </React.Fragment>
     );
   }
