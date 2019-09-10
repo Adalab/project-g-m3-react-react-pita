@@ -24,6 +24,8 @@ class App extends Component {
     }
     this.onKeyUpListener = this.onKeyUpListener.bind(this);
     this.onKeyUpListenerJob = this.onKeyUpListenerJob.bind(this);
+    this.onKeyUpListenerPhone = this.onKeyUpListenerPhone.bind(this);
+
 
   }
 
@@ -41,6 +43,18 @@ class App extends Component {
     });
   }
 
+  onKeyUpListenerPhone(event) {
+    const phone = event.currentTarget.value;
+    this.setState((prevState) => {
+      let newPhone;
+      if(prevState.phone === ''){
+        newPhone = phone;
+      }else{
+        newPhone = '';
+      }
+    });
+  }
+
   render() {
     return (
       // <LandingMain />
@@ -50,7 +64,7 @@ class App extends Component {
         job={this.state.job}
         onKeyUpListener={this.onKeyUpListener}
         onKeyUpListenerJob={this.onKeyUpListenerJob}
-
+        onKeyUpListenerPhone={this.onKeyUpListenerPhone}
       />
     );
   }
