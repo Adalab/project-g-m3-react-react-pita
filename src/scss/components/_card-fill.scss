@@ -17,7 +17,7 @@
 
 .form__field {
   border: solid 1px $green-light;
-  width: 281px;
+  //width: 281px;
   height: 30px;
   font-family: $font-open;
   font-size: $txt-sm;
@@ -25,6 +25,9 @@
   padding-left: 10px;
   &::placeholder {
     color:$grey-light-holder;
+  }
+  @media all and (min-width:$tablet) {
+    width: 281px;
   }
 }
 
