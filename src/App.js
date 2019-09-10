@@ -24,9 +24,12 @@ class App extends Component {
       phone : '',
       mail : '',
       linkedin : '',
-      github : ''
+      github : '',
+      namePalette : ''
     }
     this.onKeyUpListener = this.onKeyUpListener.bind(this);
+    this.onClickPalette = this.onClickPalette.bind(this);
+
   }
 
   onKeyUpListener(event) {
@@ -35,6 +38,23 @@ class App extends Component {
     this.setState({
       [id] : name
     });
+  }
+
+  onClickPalette(event) {
+    const palette = parseInt(event.currentTarget.value);
+    let namePalette = '';
+    if(palette === 1){
+      namePalette = 'green';
+    }else if(palette === 2){
+      namePalette = 'red';
+    }else{
+      namePalette = 'yellow';
+    }
+    this.setState({
+      palette : palette,
+      namePalette: namePalette
+    });
+    return namePalette;
   }
 
   render() {
@@ -48,7 +68,10 @@ class App extends Component {
         mail={this.state.mail}
         linkedin={this.state.linkedin}
         github={this.state.github}
+        namePalette={this.state.namePalette}
         onKeyUpListener={this.onKeyUpListener}
+        onClickPalette={this.onClickPalette}
+
       />
     );
   }

@@ -25,10 +25,12 @@ class Cards extends React.Component {
               mail={this.props.mail}
               linkedin={this.props.linkedin}
               github={this.props.github}
+              namePalette={this.props.namePalette}
                />
             <CardForm 
               color={colorPallete1} color2={colorPallete2} color3={colorPallete3} 
               onKeyUpListener={this.props.onKeyUpListener}
+              onClickPalette={this.props.onClickPalette}
             />
           </main>
           <Footer linkAdalab={linkAdalab}/>

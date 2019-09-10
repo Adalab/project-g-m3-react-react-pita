@@ -3,7 +3,7 @@ import React from 'react';
 class Card extends React.Component {
   render() {
     return (
-      <div className="preview-card js__preview-card">
+      <div className={`preview-card js__preview-card preview-card-${this.props.namePalette}`}>
         <div className="preview-card__title-container">
           <h4 className="preview-card__name">
             {(this.props.name) ? this.props.name : this.props.defaultInput.name}
