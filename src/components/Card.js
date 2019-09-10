@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types'; 
 
 class Card extends React.Component {
   render() {
@@ -35,6 +36,17 @@ class Card extends React.Component {
   }
 }
 
+Card.propTypes = {
+    FullName:PropTypes.string,
+    job:PropTypes.string,
+    phone : PropTypes.string,
+    mail : PropTypes.string,
+    linkedin : PropTypes.string,
+    github : PropTypes.string,
+    namePalette : PropTypes.string,
+    defaultInput:PropTypes.object
 
+    // linkAdalab: PropTypes.string, 
+}; 
 
 export default Card;
