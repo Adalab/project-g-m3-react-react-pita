@@ -59,7 +59,7 @@ class App extends Component {
 
   render() {
     return (
-      // <LandingMain />
+    //   <LandingMain />
       <Cards
         defaultInput={defaultInput}
         FullName={this.state.FullName}
