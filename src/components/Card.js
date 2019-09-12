@@ -7,7 +7,7 @@ class Card extends React.Component {
       <div className={`preview-card js__preview-card preview-card-${this.props.namePalette}`}>
         <div className="preview-card__title-container">
           <h4 className="preview-card__name">
-            {(this.props.FullName) ? this.props.FullName : this.props.defaultInput.name}
+            {(this.props.fieldForm.FullName) ? this.props.fieldForm.FullName : this.props.defaultInput.name}
           </h4>
           <h5 className="preview-card__career">{(this.props.job) ? this.props.job : this.props.defaultInput.job}</h5>
         </div>
@@ -36,17 +36,17 @@ class Card extends React.Component {
   }
 }
 
-Card.propTypes = {
-    FullName:PropTypes.string,
-    job:PropTypes.string,
-    phone : PropTypes.string,
-    mail : PropTypes.string,
-    linkedin : PropTypes.string,
-    github : PropTypes.string,
-    namePalette : PropTypes.string,
-    defaultInput:PropTypes.object
+// Card.propTypes = {
+//     FullName:PropTypes.string,
+//     job:PropTypes.string,
+//     phone : PropTypes.string,
+//     mail : PropTypes.string,
+//     linkedin : PropTypes.string,
+//     github : PropTypes.string,
+//     namePalette : PropTypes.string,
+//     defaultInput:PropTypes.object
 
-    // linkAdalab: PropTypes.string, 
-}; 
+//     // linkAdalab: PropTypes.string, 
+// }; 
 
 export default Card;
