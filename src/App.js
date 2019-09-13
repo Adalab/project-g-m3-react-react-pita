@@ -18,15 +18,17 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      palette : 1, 
-      FullName : '',
-      job : '',
-      phone : '',
-      mail : '',
-      linkedin : '',
-      github : '',
-      namePalette : ''
-    }
+		formObjetc : {
+      		palette : 1, 
+      		FullName : '',
+			job : '',
+			phone : '',
+			mail : '',
+			linkedin : '',
+			github : '',
+			namePalette : ''
+		}
+	}
     this.onKeyUpListener = this.onKeyUpListener.bind(this);
     this.onClickPalette = this.onClickPalette.bind(this);
 
@@ -36,7 +38,10 @@ class App extends Component {
     const name = event.currentTarget.value;
     const id = event.currentTarget.id;
     this.setState({
-      [id] : name
+		// deberiamos meter el objeto entero, porque de esta manera solo 
+		// estamos cambiando el name. Ya está pasado el objecto formObject en todos 
+		// los componentes
+      formObjetc : name
     });
   }
 
@@ -62,14 +67,14 @@ class App extends Component {
     //   <LandingMain />
       <Cards
         defaultInput={defaultInput}
-        FullName={this.state.FullName}
-        job={this.state.job}
-        phone={this.state.phone}
-        mail={this.state.mail}
-        linkedin={this.state.linkedin}
-        github={this.state.github}
-        palette={this.state.palette}
-        namePalette={this.state.namePalette}
+        formObjetc={this.state.formObjetc}
+        // job={this.state.job}
+        // phone={this.state.phone}
+        // mail={this.state.mail}
+        // linkedin={this.state.linkedin}
+        // github={this.state.github}
+        // palette={this.state.palette}
+        // namePalette={this.state.namePalette}
         onKeyUpListener={this.onKeyUpListener}
         onClickPalette={this.onClickPalette}
 

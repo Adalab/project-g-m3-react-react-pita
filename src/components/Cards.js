@@ -19,14 +19,14 @@ class Cards extends React.Component {
           <main className="card__main">
             <CardPreview
               defaultInput = {this.props.defaultInput}
-              FullName={this.props.FullName}
-              job={this.props.job}
-              phone={this.props.phone}
-              mail={this.props.mail}
-              linkedin={this.props.linkedin}
-              github={this.props.github}
-              namePalette={this.props.namePalette}
-              palette={this.props.palette}
+              formObject={this.props.formObject}
+            //   job={this.props.job}
+            //   phone={this.props.phone}
+            //   mail={this.props.mail}
+            //   linkedin={this.props.linkedin}
+            //   github={this.props.github}
+            //   namePalette={this.props.namePalette}
+            //   palette={this.props.palette}
                />
             <CardForm 
               color={colorPallete1} color2={colorPallete2} color3={colorPallete3} 
