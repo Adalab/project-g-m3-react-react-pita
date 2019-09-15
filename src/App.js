@@ -7,26 +7,27 @@ import DefaultImg from './components/DefaultImg';
 /*<LandingMain />*/
 
 
-const defaultInput = {
-  name: 'Nombre y apellidos',
-  job: 'Front-end developer',
-  image: DefaultImg,
-}
-
-
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      palette : 1, 
-      FullName : '',
-      job : '',
-      phone : '',
-      mail : '',
-      linkedin : '',
-      github : '',
-      namePalette : ''
-    }
+		formObject : {
+      		palette : 1, 
+      		FullName : '',
+			job : '',
+			phone : '',
+			mail : '',
+			linkedin : '',
+			github : '',
+			namePalette : ''
+		}, 
+		defaultInput : {
+			name: 'Nombre y apellidos',
+			job: 'Front-end developer',
+			image: DefaultImg
+		  }
+
+	}
     this.onChangeListener = this.onChangeListener.bind(this);
     this.onClickPalette = this.onClickPalette.bind(this);
     this.getUser = this.getUser.bind(this);
@@ -55,9 +56,15 @@ class App extends Component {
   onChangeListener(event) {
     const name = event.currentTarget.value;
     const id = event.currentTarget.id;
-    this.setState({
-      [id] : name
-    }, () => {localStorage.setItem('User', JSON.stringify(this.state))});
+    this.setState((prevState) =>({
+	  formObject : {
+		  ...prevState.formObject,
+		  [id] : name
+    }
+    // ,() => {
+    //   localStorage.setItem('User', JSON.stringify(this.state));
+    // }
+  }));
   }
 
   onClickPalette(event) {
@@ -70,26 +77,25 @@ class App extends Component {
     }else{
       namePalette = 'yellow';
     }
-    this.setState({
-      palette : palette,
-      namePalette: namePalette
-    }, () => {localStorage.setItem('User', JSON.stringify(this.state))});
-    // return namePalette;
+    this.setState((prevState) =>({
+		formObject : {
+			...prevState.formObject,
+			palette : palette, 
+			namePalette : namePalette
+	  }
+    }
+    // , () => {localStorage.setItem('User', JSON.stringify(this.state))}
+    ));
+
+    return namePalette;
   }
 
   render() {
     return (
     //   <LandingMain />
       <Cards
-        defaultInput={defaultInput}
-        FullName={this.state.FullName}
-        job={this.state.job}
-        phone={this.state.phone}
-        mail={this.state.mail}
-        linkedin={this.state.linkedin}
-        github={this.state.github}
-        palette={this.state.palette}
-        namePalette={this.state.namePalette}
+        defaultInput={this.state.defaultInput}
+        formObject={this.state.formObject}
         onChangeListener={this.onChangeListener}
         onClickPalette={this.onClickPalette}
 

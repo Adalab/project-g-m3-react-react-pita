@@ -12,27 +12,21 @@ const colorPallete3 = ['#3e5b65', '#eab052', '#a0c0cf'];
 
 class Cards extends React.Component {
   render() {
+	  const {defaultInput, formObject, onChangeListener, onClickPalette} = this.props
     return (
       <React.Fragment>
         <div className="page__cards">
           <Header />
           <main className="card__main">
             <CardPreview
-              defaultInput = {this.props.defaultInput}
-              FullName={this.props.FullName}
-              job={this.props.job}
-              phone={this.props.phone}
-              mail={this.props.mail}
-              linkedin={this.props.linkedin}
-              github={this.props.github}
-              namePalette={this.props.namePalette}
-              palette={this.props.palette}
+              defaultInput = {defaultInput}
+              formObject={formObject}
                />
             <CardForm 
               color={colorPallete1} color2={colorPallete2} color3={colorPallete3} 
-              onChangeListener={this.props.onChangeListener}
-              onClickPalette={this.props.onClickPalette}
-              palette={this.props.palette}
+              onChangeListener={onChangeListener}
+              onClickPalette={onClickPalette}
+              formObject={formObject}
             />
           </main>
           <Footer linkAdalab={linkAdalab}/>
