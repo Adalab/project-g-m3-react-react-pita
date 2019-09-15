@@ -33,7 +33,8 @@ class Cards extends React.Component {
               color={colorPallete1} color2={colorPallete2} color3={colorPallete3} 
               onKeyUpListener={onKeyUpListener}
               onClickPalette={onClickPalette}
-              palette={palette}
+            //   palette={formObject.palette}
+              formObject={formObject}
             />
           </main>
           <Footer linkAdalab={linkAdalab}/>

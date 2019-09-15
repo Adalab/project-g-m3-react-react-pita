@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 class CardForm extends React.Component {
 	render() {
+		const {formObject, onClickPalette, color, color2, color3} = this.props
 		return (
 			<form className="form__container" action="POST">
 				<Collapsables >
@@ -16,31 +17,31 @@ class CardForm extends React.Component {
                     <label className="palette__label" htmlFor="p1">colores</label>
                     <div className="palette__container-colors">
                         <div className="input-box">
-                            <input className="palette__radio js__radio1" id="p1" type="radio" value="1" name="palette" onChange={this.props.onClickPalette} checked={this.props.palette ===1}/>
+                            <input className="palette__radio js__radio1" id="p1" type="radio" value="1" name="palette" onChange={onClickPalette} checked={formObject.palette ===1}/>
                             <ul className="colors">
-                                <li className="square-color" style={{ backgroundColor: this.props.color[0] }}>dark green blue</li>
-                                <li className="square-color" style={{ backgroundColor: this.props.color[1] }}>dirty blue</li>
-                                <li className="square-color" style={{ backgroundColor: this.props.color[2] }}>hospital green</li>
+                                <li className="square-color" style={{ backgroundColor: color[0] }}>dark green blue</li>
+                                <li className="square-color" style={{ backgroundColor: color[1] }}>dirty blue</li>
+                                <li className="square-color" style={{ backgroundColor: color[2] }}>hospital green</li>
                             </ul>
                         </div>
                         <label className="palette__label" htmlFor="p2"></label>
                         <div className="input-box">
                             <input className="palette__radio js__radio2" id="p2" type="radio" value="2"
-                                name="palette" onChange={this.props.onClickPalette} checked={this.props.palette ===2}/>
+                                name="palette" onChange={onClickPalette} checked={formObject.palette ===2}/>
                             <ul className="colors">
-                                <li className="square-color" style={{ backgroundColor: this.props.color2[0] }}>dried blood</li>
-                                <li className="square-color" style={{ backgroundColor: this.props.color2[1] }}>rusty red</li>
-                                <li className="square-color" style={{ backgroundColor: this.props.color2[2] }}>tomato</li>
+                                <li className="square-color" style={{ backgroundColor: color2[0] }}>dried blood</li>
+                                <li className="square-color" style={{ backgroundColor: color2[1] }}>rusty red</li>
+                                <li className="square-color" style={{ backgroundColor: color2[2] }}>tomato</li>
                             </ul>
                         </div>
                         <label className="palette__label" htmlFor="p3"></label>
                         <div className="input-box">
                             <input className="palette__radio js__radio3" id="p3" type="radio" value="3"
-                                name="palette" onChange={this.props.onClickPalette} checked={this.props.palette ===3} />
+                                name="palette" onChange={onClickPalette} checked={formObject.palette ===3} />
                             <ul className="colors">
-                                <li className="square-color" style={{ backgroundColor: this.props.color3[0] }}>slate</li>
-                                <li className="square-color" style={{ backgroundColor: this.props.color3[1] }}>faded orange</li>
-                                <li className="square-color" style={{ backgroundColor: this.props.color3[2] }}>light grey blue</li>
+                                <li className="square-color" style={{ backgroundColor: color3[0] }}>slate</li>
+                                <li className="square-color" style={{ backgroundColor: color3[1] }}>faded orange</li>
+                                <li className="square-color" style={{ backgroundColor: color3[2] }}>light grey blue</li>
                             </ul>
                         </div>
                     </div>

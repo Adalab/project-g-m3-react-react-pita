@@ -7,13 +7,6 @@ import DefaultImg from './components/DefaultImg';
 /*<LandingMain />*/
 
 
-const defaultInput = {
-  name: 'Nombre y apellidos',
-  job: 'Front-end developer',
-  image: DefaultImg,
-}
-
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -27,7 +20,13 @@ class App extends Component {
 			linkedin : '',
 			github : '',
 			namePalette : ''
-		}
+		}, 
+		defaultInput : {
+			name: 'Nombre y apellidos',
+			job: 'Front-end developer',
+			image: DefaultImg
+		  }
+
 	}
     this.onKeyUpListener = this.onKeyUpListener.bind(this);
     this.onClickPalette = this.onClickPalette.bind(this);
@@ -70,7 +69,7 @@ class App extends Component {
     return (
     //   <LandingMain />
       <Cards
-        defaultInput={defaultInput}
+        defaultInput={this.state.defaultInput}
         formObject={this.state.formObject}
         // job={this.state.job}
         // phone={this.state.phone}
