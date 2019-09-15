@@ -4,14 +4,15 @@ import Card from './Card';
 
 class CardPreview extends React.Component {
     render() {
+		const {defaultInput, formObject} = this.props
         return(
             <section className="card-preview">
             <div className="card-preview__container">
               <Reset />
               <Card 
-              defaultInput = {this.props.defaultInput}
+              defaultInput = {defaultInput}
             //   palette={this.props.palette}
-              formObject={this.props.formObject}
+              formObject={formObject}
             //   job={this.props.job}
             //   phone={this.props.phone}
             //   mail={this.props.mail}

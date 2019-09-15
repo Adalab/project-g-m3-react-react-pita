@@ -18,7 +18,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-		formObjetc : {
+		formObject : {
       		palette : 1, 
       		FullName : '',
 			job : '',
@@ -37,12 +37,12 @@ class App extends Component {
   onKeyUpListener(event) {
     const name = event.currentTarget.value;
     const id = event.currentTarget.id;
-    this.setState({
-		// deberiamos meter el objeto entero, porque de esta manera solo 
-		// estamos cambiando el name. Ya está pasado el objecto formObject en todos 
-		// los componentes
-      formObjetc : name
-    });
+    this.setState((prevState) =>({
+	  formObject : {
+		  ...prevState.formObject,
+		  [id] : name
+	}
+    }));
   }
 
   onClickPalette(event) {
@@ -55,10 +55,14 @@ class App extends Component {
     }else{
       namePalette = 'yellow';
     }
-    this.setState({
-      palette : palette,
-      namePalette: namePalette
-    });
+    this.setState((prevState) =>({
+		formObject : {
+			...prevState.formObject,
+			palette : palette, 
+			namePalette : namePalette
+	  }
+	  }));
+
     return namePalette;
   }
 
@@ -67,7 +71,7 @@ class App extends Component {
     //   <LandingMain />
       <Cards
         defaultInput={defaultInput}
-        formObjetc={this.state.formObjetc}
+        formObject={this.state.formObject}
         // job={this.state.job}
         // phone={this.state.phone}
         // mail={this.state.mail}
