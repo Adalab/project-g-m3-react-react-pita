@@ -10,15 +10,8 @@ class CardPreview extends React.Component {
             <div className="card-preview__container">
               <Reset />
               <Card 
-              defaultInput = {defaultInput}
-            //   palette={this.props.palette}
-              formObject={formObject}
-            //   job={this.props.job}
-            //   phone={this.props.phone}
-            //   mail={this.props.mail}
-            //   linkedin={this.props.linkedin}
-            //   github={this.props.github}
-            //   namePalette={this.props.namePalette}
+                defaultInput = {defaultInput}
+                formObject={formObject}
                />
             </div>
           </section>

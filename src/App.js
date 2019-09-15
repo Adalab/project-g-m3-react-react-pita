@@ -71,13 +71,6 @@ class App extends Component {
       <Cards
         defaultInput={this.state.defaultInput}
         formObject={this.state.formObject}
-        // job={this.state.job}
-        // phone={this.state.phone}
-        // mail={this.state.mail}
-        // linkedin={this.state.linkedin}
-        // github={this.state.github}
-        // palette={this.state.palette}
-        // namePalette={this.state.namePalette}
         onKeyUpListener={this.onKeyUpListener}
         onClickPalette={this.onClickPalette}
 
