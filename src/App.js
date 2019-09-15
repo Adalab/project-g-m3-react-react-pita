@@ -27,17 +27,37 @@ class App extends Component {
       github : '',
       namePalette : ''
     }
-    this.onKeyUpListener = this.onKeyUpListener.bind(this);
+    this.onChangeListener = this.onChangeListener.bind(this);
     this.onClickPalette = this.onClickPalette.bind(this);
-
+    this.getUser = this.getUser.bind(this);
   }
 
-  onKeyUpListener(event) {
+  componentDidMount() {
+    this.getUser();
+  }
+
+  getUser() {
+    const ls = JSON.parse(localStorage.getItem('User'));
+    if (ls !== null) {
+      this.setState({
+        palette : ls.palette, 
+        FullName : ls.FullName,
+        job : ls.job,
+        phone : ls.phone,
+        mail : ls.mail,
+        linkedin : ls.linkedin,
+        github : ls.github,
+        namePalette : ls.namePalette,
+      })
+    };
+  }
+
+  onChangeListener(event) {
     const name = event.currentTarget.value;
     const id = event.currentTarget.id;
     this.setState({
       [id] : name
-    });
+    }, () => {localStorage.setItem('User', JSON.stringify(this.state))});
   }
 
   onClickPalette(event) {
@@ -53,8 +73,8 @@ class App extends Component {
     this.setState({
       palette : palette,
       namePalette: namePalette
-    });
-    return namePalette;
+    }, () => {localStorage.setItem('User', JSON.stringify(this.state))});
+    // return namePalette;
   }
 
   render() {
@@ -70,7 +90,7 @@ class App extends Component {
         github={this.state.github}
         palette={this.state.palette}
         namePalette={this.state.namePalette}
-        onKeyUpListener={this.onKeyUpListener}
+        onChangeListener={this.onChangeListener}
         onClickPalette={this.onClickPalette}
 
       />

@@ -57,12 +57,12 @@ class CardForm extends React.Component {
                     <div className="fill__items items-name">
                         <label className="field__tag tag-name" htmlFor="FullName">nombre completo</label>
                         <input className="form__field form__field-name" type="text"
-                            id="FullName" name="FullName" placeholder="Ej: Sally Jill" required onKeyUp={this.props.onKeyUpListener}/>
+                            id="FullName" name="FullName" placeholder="Ej: Sally Jill" required onChange={this.props.onChangeListener}/>
                     </div>
                     <div className="fill__items items-job">
                         <label className="field__tag tag-job" htmlFor="job">puesto</label>
                         <input className="form__field form__field-job" type="text" id="job"
-                            name="job" placeholder="Ej: Front-end unicorn" onKeyUp={this.props.onKeyUpListener} required />
+                            name="job" placeholder="Ej: Front-end unicorn" onChange={this.props.onChangeListener} required />
                     </div>
                     <div className="fill__items items-photo">
                         <label className="field__tag tag-photo" htmlFor="img-selector">Imagen de perfil</label>
@@ -76,22 +76,22 @@ class CardForm extends React.Component {
                     <div className="fill__items items-phone">
                         <label className="field__tag tag-phone" htmlFor="phone">teléfono</label>
                         <input className="form__field form__field-phone" type="tel"
-                            id="phone" name="phone" placeholder="Ej:555-55-55-55" onKeyUp={this.props.onKeyUpListener}/>
+                            id="phone" name="phone" placeholder="Ej:555-55-55-55" onChange={this.props.onChangeListener}/>
                         <div className="fill__items items-email">
                             <label className="field__tag tag-mail" htmlFor="mail">email</label>
                             <input className="form__field form__field-mail" type="email"
-                                id="mail" name="mail" placeholder="Ej:sally-hill@gmail.com" onKeyUp={this.props.onKeyUpListener} required />
+                                id="mail" name="mail" placeholder="Ej:sally-hill@gmail.com" onChange={this.props.onChangeListener} required />
                         </div>
                     </div>
                     <div className="fill__items items-linkedin">
                         <label className="field__tag tag-linkedin" htmlFor="linkedin">linkedin</label>
                         <input className="form__field form__field-linkedin" type="text"
-                            id="linkedin" name="linkedin" placeholder="Ej:sally.hill" onKeyUp={this.props.onKeyUpListener} required />
+                            id="linkedin" name="linkedin" placeholder="Ej:sally.hill" onChange={this.props.onChangeListener} required />
                     </div>
                     <div className="fill__items items-github">
                         <label className="field__tag tag-github" htmlFor="github">github</label>
                         <input className="form__field form__field-github" type="text"
-                            id="github" name="github" placeholder="Ej:@sally-hill" onKeyUp={this.props.onKeyUpListener} required />
+                            id="github" name="github" placeholder="Ej:@sally-hill" onChange={this.props.onChangeListener} required />
                     </div>
                 </div>
             </fieldset>
@@ -127,7 +127,7 @@ class CardForm extends React.Component {
 CardForm.propTypes = {
 	color: PropTypes.array,
     palette : PropTypes.number, 
-    onKeyUpListener : PropTypes.func,
+    onChangeListener : PropTypes.func,
     onClickPalette : PropTypes.func
     // linkAdalab: PropTypes.string, 
 }; 

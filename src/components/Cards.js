@@ -30,7 +30,7 @@ class Cards extends React.Component {
                />
             <CardForm 
               color={colorPallete1} color2={colorPallete2} color3={colorPallete3} 
-              onKeyUpListener={this.props.onKeyUpListener}
+              onChangeListener={this.props.onChangeListener}
               onClickPalette={this.props.onClickPalette}
               palette={this.props.palette}
             />
