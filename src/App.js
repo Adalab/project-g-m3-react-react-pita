@@ -12,8 +12,8 @@ class App extends Component {
     super(props);
     this.state = {
 		formObject : {
-      		palette : 1, 
-      		FullName : '',
+      palette : 1, 
+      FullName : '',
 			job : '',
 			phone : '',
 			mail : '',
