@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './scss/main.scss';
 // import LandingMain from './components/LandingMain';
 import Cards from './components/Cards';
-import DefaultImg from './components/DefaultImg';
-
+import {defaultImg} from './components/defaultImg';
+import GetAvatar from './components/GetAvatar';
 /*<LandingMain />*/
 
 
@@ -24,7 +24,7 @@ class App extends Component {
 		defaultInput : {
 			name: 'Nombre y apellidos',
 			job: 'Front-end developer',
-			image: DefaultImg
+			image: defaultImg
 		  }
 
 	}
