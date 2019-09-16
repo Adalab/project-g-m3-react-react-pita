@@ -18,14 +18,17 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      palette : 1, 
-      FullName : '',
-      job : '',
-      phone : '',
-      mail : '',
-      linkedin : '',
-      github : '',
-      namePalette : ''
+      defaultInput: defaultInput,
+      inputValues: {
+        palette : 1, 
+        FullName : '',
+        job : '',
+        phone : '',
+        mail : '',
+        linkedin : '',
+        github : '',
+        namePalette : ''
+      }
     }
     this.onKeyUpListener = this.onKeyUpListener.bind(this);
     this.onClickPalette = this.onClickPalette.bind(this);
@@ -35,9 +38,12 @@ class App extends Component {
   onKeyUpListener(event) {
     const name = event.currentTarget.value;
     const id = event.currentTarget.id;
-    this.setState({
-      [id] : name
-    });
+    this.setState((prevState) => ({
+      inputValues: {
+        ...prevState.inputValues,
+        [id]: name
+      }
+    }));
   }
 
   onClickPalette(event) {
@@ -50,10 +56,12 @@ class App extends Component {
     }else{
       namePalette = 'yellow';
     }
-    this.setState({
-      palette : palette,
-      namePalette: namePalette
-    });
+    this.setState((prevState) => ({
+      inputValues: {
+        palette : palette,
+        namePalette: namePalette
+      }
+    }));
     return namePalette;
   }
 
@@ -61,15 +69,16 @@ class App extends Component {
     return (
     //   <LandingMain />
       <Cards
-        defaultInput={defaultInput}
-        FullName={this.state.FullName}
-        job={this.state.job}
-        phone={this.state.phone}
-        mail={this.state.mail}
-        linkedin={this.state.linkedin}
-        github={this.state.github}
-        palette={this.state.palette}
-        namePalette={this.state.namePalette}
+        defaultInput={this.state.defaultInput}
+        inputValues={this.state.inputValues}
+        // FullName={this.state.FullName}
+        // job={this.state.job}
+        // phone={this.state.phone}
+        // mail={this.state.mail}
+        // linkedin={this.state.linkedin}
+        // github={this.state.github}
+        // palette={this.state.palette}
+        // namePalette={this.state.namePalette}
         onKeyUpListener={this.onKeyUpListener}
         onClickPalette={this.onClickPalette}
 
