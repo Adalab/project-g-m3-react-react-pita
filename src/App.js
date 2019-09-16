@@ -60,11 +60,10 @@ class App extends Component {
 	  formObject : {
 		  ...prevState.formObject,
 		  [id] : name
-    }
-    // ,() => {
-    //   localStorage.setItem('User', JSON.stringify(this.state));
-    // }
-  }));
+    }}),
+    () => {
+      localStorage.setItem('User', JSON.stringify(this.state));
+    })
   }
 
   onClickPalette(event) {
@@ -82,11 +81,9 @@ class App extends Component {
 			...prevState.formObject,
 			palette : palette, 
 			namePalette : namePalette
-	  }
-    }
-    // , () => {localStorage.setItem('User', JSON.stringify(this.state))}
-    ));
-
+	  }}),
+    () => {localStorage.setItem('User', JSON.stringify(this.state));
+    })
     return namePalette;
   }
 
