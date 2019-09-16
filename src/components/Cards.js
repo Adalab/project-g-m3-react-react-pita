@@ -24,7 +24,9 @@ class Cards extends React.Component {
               formObject={formObject}
                />
             <CardForm 
-              color={colorPallete1} color2={colorPallete2} color3={colorPallete3} 
+              color={colorPallete1} 
+              color2={colorPallete2} 
+              color3={colorPallete3} 
               onKeyUpListener={onKeyUpListener}
               onClickPalette={onClickPalette}
               formObject={formObject}
