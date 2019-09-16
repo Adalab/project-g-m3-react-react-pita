@@ -12,8 +12,8 @@ class App extends Component {
     super(props);
     this.state = {
 		formObject : {
-      		palette : 1, 
-      		FullName : '',
+      palette : 1, 
+      FullName : '',
 			job : '',
 			phone : '',
 			mail : '',
@@ -41,14 +41,7 @@ class App extends Component {
     const ls = JSON.parse(localStorage.getItem('User'));
     if (ls !== null) {
       this.setState({
-        palette : ls.palette, 
-        FullName : ls.FullName,
-        job : ls.job,
-        phone : ls.phone,
-        mail : ls.mail,
-        linkedin : ls.linkedin,
-        github : ls.github,
-        namePalette : ls.namePalette,
+        formObject : ls.formObject
       })
     };
   }
