@@ -30,6 +30,8 @@ class Cards extends React.Component {
               onKeyUpListener={onKeyUpListener}
               onClickPalette={onClickPalette}
               formObject={formObject}
+              cid={this.props.cid}
+              handleCollasible={this.props.handleCollasible}
             />
           </main>
           <Footer linkAdalab={linkAdalab}/>

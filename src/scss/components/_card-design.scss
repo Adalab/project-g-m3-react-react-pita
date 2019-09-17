@@ -13,6 +13,9 @@
   font-size: $txt-sm;
   color: $grey-dark;
   text-transform: uppercase;
+  @media all and (min-width:$tablet) {
+    margin-right: 110px;
+  }
 }
 
 .colors {

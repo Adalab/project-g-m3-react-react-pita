@@ -1,7 +1,7 @@
 .collapsable  {
   border: none;
   border-bottom: solid 1px $grey-line;
-  padding: 0 0 30px;
+  //padding: 0 0 30px;
 }
 
 .collapsable__header {
@@ -30,10 +30,14 @@
 
 .collapsable--visible {
   height: auto;
-  //padding: 0 0 30px;
+  padding: 0 0 30px;
   opacity: 1;
 }
 
 .collapsable--rotate {
   transform: rotate(180deg);
+}
+
+.collapsable--hidden{
+  display: none;
 }
