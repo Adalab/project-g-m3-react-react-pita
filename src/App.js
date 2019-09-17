@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import './scss/main.scss';
-// import LandingMain from './components/LandingMain';
+import LandingMain from './components/LandingMain';
 import Cards from './components/Cards';
 import DefaultImg from './components/DefaultImg';
-
-/*<LandingMain />*/
-
 
 class App extends Component {
   constructor(props) {
@@ -100,16 +98,16 @@ class App extends Component {
 
   render() {
     return (
-    //   <LandingMain />
-      <Cards
-        defaultInput={this.state.defaultInput}
-        formObject={this.state.formObject}
-        onChangeListener={this.onChangeListener}
-        onClickPalette={this.onClickPalette}
-        cid={this.state.cid}
-        handleCollasible={this.handleCollasible}
-
-      />
+      <Switch>
+	      <Route exact path="/" component={ LandingMain }></Route>
+        <Route path="/cards" render={() => <Cards 
+          defaultInput={this.state.defaultInput}
+          formObject={this.state.formObject}
+          onChangeListener={this.onChangeListener}
+          onClickPalette={this.onClickPalette}
+          cid={this.state.cid}
+          handleCollasible={this.handleCollasible} />}></Route>
+      </Switch>
     );
   }
 }
