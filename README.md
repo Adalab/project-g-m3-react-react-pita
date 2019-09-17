@@ -12,7 +12,7 @@ Here we present an interactive Single Page Application (SPA) that allows users t
 
 For the development of the app the following technologies have been used:
     -HTML forms.
-    -Advanced CSS with flex and grid.
+    -SCSS. Flex and grid.
     -Mediaqueries and mobile first design.
     -Event management.
     -Connection with server.
