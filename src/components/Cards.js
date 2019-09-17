@@ -13,7 +13,7 @@ const colorPallete3 = ['#3e5b65', '#eab052', '#a0c0cf'];
 
 class Cards extends React.Component {
   render() {
-	  const {defaultInput, formObject, onKeyUpListener, onClickPalette} = this.props
+	  const {defaultInput, formObject, onChangeListener, onClickPalette} = this.props
     return (
       <React.Fragment>
         <div className="page__cards">
@@ -24,10 +24,8 @@ class Cards extends React.Component {
               formObject={formObject}
                />
             <CardForm 
-              color={colorPallete1} 
-              color2={colorPallete2} 
-              color3={colorPallete3} 
-              onKeyUpListener={onKeyUpListener}
+              color={colorPallete1} color2={colorPallete2} color3={colorPallete3} 
+              onChangeListener={onChangeListener}
               onClickPalette={onClickPalette}
               formObject={formObject}
             />

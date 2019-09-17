@@ -28,20 +28,35 @@ class App extends Component {
 		  }
 
 	}
-    this.onKeyUpListener = this.onKeyUpListener.bind(this);
+    this.onChangeListener = this.onChangeListener.bind(this);
     this.onClickPalette = this.onClickPalette.bind(this);
-
+    this.getUser = this.getUser.bind(this);
   }
 
-  onKeyUpListener(event) {
+  componentDidMount() {
+    this.getUser();
+  }
+
+  getUser() {
+    const ls = JSON.parse(localStorage.getItem('User'));
+    if (ls !== null) {
+      this.setState({
+        formObject : ls.formObject
+      })
+    };
+  }
+
+  onChangeListener(event) {
     const name = event.currentTarget.value;
     const id = event.currentTarget.id;
     this.setState((prevState) =>({
 	  formObject : {
 		  ...prevState.formObject,
 		  [id] : name
-	}
-    }));
+    }}),
+    () => {
+      localStorage.setItem('User', JSON.stringify(this.state));
+    })
   }
 
   onClickPalette(event) {
@@ -59,9 +74,9 @@ class App extends Component {
 			...prevState.formObject,
 			palette : palette, 
 			namePalette : namePalette
-	  }
-	  }));
-
+	  }}),
+    () => {localStorage.setItem('User', JSON.stringify(this.state));
+    })
     return namePalette;
   }
 
@@ -71,7 +86,7 @@ class App extends Component {
       <Cards
         defaultInput={this.state.defaultInput}
         formObject={this.state.formObject}
-        onKeyUpListener={this.onKeyUpListener}
+        onChangeListener={this.onChangeListener}
         onClickPalette={this.onClickPalette}
 
       />
