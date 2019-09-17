@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import Footer from './Footer';
 
 const linkAdalab = 'https://adalab.es/';
@@ -46,9 +47,9 @@ class LandingMain extends React.Component {
                   </li>
                 </ul>
               </div>{" "}
-              <a className="start__link" href="cards.html">
+              <Link to="/cards" className="start__link">
                 comenzar
-              </a>
+              </Link>
             </div>
           </main>
         </div>

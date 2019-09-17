@@ -47,9 +47,13 @@
     font-size: $txt-sm;
     display: flex;
     margin: 0 auto;
+    
 }
 
 .fa-twitter {
     font-size: $txt-lg;
     margin-right: 10px;
+}
+.form__success-button{
+    margin: 0 0 30px;
 }

@@ -3,6 +3,7 @@ import Header from './Header';
 import CardPreview from './CardPreview';
 import CardForm from './CardForm';
 import Footer from './Footer';
+import PropTypes from 'prop-types'; 
 
 const linkAdalab = 'https://adalab.es/';
 
@@ -12,7 +13,7 @@ const colorPallete3 = ['#3e5b65', '#eab052', '#a0c0cf'];
 
 class Cards extends React.Component {
   render() {
-	  const {defaultInput, formObject, onKeyUpListener, onClickPalette} = this.props
+	  const {defaultInput, formObject, onChangeListener, onClickPalette, handleCollasible, cid, handleFilePicker, uploadImage, getPreview, avatar, isAvatarDefault} = this.props
     return (
       <React.Fragment>
         <div className="page__cards">
@@ -21,12 +22,20 @@ class Cards extends React.Component {
             <CardPreview
               defaultInput = {defaultInput}
               formObject={formObject}
+              avatar={avatar}
                />
             <CardForm 
               color={colorPallete1} color2={colorPallete2} color3={colorPallete3} 
-              onKeyUpListener={onKeyUpListener}
+              onChangeListener={onChangeListener}
               onClickPalette={onClickPalette}
               formObject={formObject}
+              cid={cid}
+              handleCollasible={handleCollasible}
+              handleFilePicker={handleFilePicker}
+              uploadImage={uploadImage}
+              getPreview={getPreview}
+              avatar={avatar} 
+              isAvatarDefault={isAvatarDefault}
             />
           </main>
           <Footer linkAdalab={linkAdalab}/>
@@ -35,5 +44,12 @@ class Cards extends React.Component {
     );
   }
 }
+
+Cards.propTypes = {
+  defaultInput: PropTypes.object,
+  formObject: PropTypes.object,
+  onKeyUpListener: PropTypes.func.isRequired,
+  onClickPalette: PropTypes.func.isRequired
+}; 
 
 export default Cards;
