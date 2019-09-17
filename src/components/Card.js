@@ -14,19 +14,19 @@ class Card extends React.Component {
         </div>
         <div className="preview-card__img js__profile-image" style={{ backgroundImage: `url(${defaultInput.image})` }}></div>
         <ul className="preview-card__social-list">
-          <li className={`social-list__item ${(formObject.phone) ? '' : 'hidden'}`}><a href="#phone" target="_blank" className="social-list__link phone__link">
+          <li className={`social-list__item ${(formObject.phone) ? '' : 'hidden'}`}><a href={`tel:${formObject.phone}`} target="_blank" rel="noopener noreferrer" className="social-list__link phone__link">
             <i className="fas fa-mobile-alt social-list__icon"></i>
           </a>
           </li>
-          <li className={`social-list__item ${(formObject.mail) ? '' : 'hidden'}`}><a href="#email" target="_blank" className="social-list__link email__link">
+          <li className={`social-list__item ${(formObject.mail) ? '' : 'hidden'}`}><a href={`mailto:${formObject.mail}`} target="_blank" rel="noopener noreferrer" className="social-list__link email__link">
             <i className="far fa-envelope social-list__icon"></i>
           </a>
           </li>
-          <li className={`social-list__item ${(formObject.linkedin) ? '' : 'hidden'}`}> <a href="#linkedin" target="_blank" className="social-list__link linkedin__link">
+          <li className={`social-list__item ${(formObject.linkedin) ? '' : 'hidden'}`}> <a href={`https://www.linkedin.com/in/${formObject.linkedin}`} target="_blank" rel="noopener noreferrer" className="social-list__link linkedin__link">
             <i className="fab fa-linkedin-in social-list__icon"></i>
           </a>
           </li>
-          <li className={`social-list__item ${(formObject.github) ? '' : 'hidden'}`}> <a href="#github" target="_blank" className="social-list__link github__link">
+          <li className={`social-list__item ${(formObject.github) ? '' : 'hidden'}`}> <a href={`https://github.com/${formObject.github}`} target="_blank" rel="noopener noreferrer" className="social-list__link github__link">
             <i className="fab fa-github-alt social-list__icon"></i>
           </a>
 
