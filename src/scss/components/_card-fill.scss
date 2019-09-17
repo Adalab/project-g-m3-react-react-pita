@@ -27,7 +27,7 @@
     color:$grey-light-holder;
   }
   @media all and (min-width:$tablet) {
-    width: 281px;
+    //width: 281px;
   }
 }
 
@@ -69,4 +69,7 @@
   opacity: 0;
   width: 0.5px;
   height: 0.5px;
+}
+.form__field-github{
+  margin: 0 0 30px;
 }

@@ -28,6 +28,8 @@ class Cards extends React.Component {
               onChangeListener={onChangeListener}
               onClickPalette={onClickPalette}
               formObject={formObject}
+              cid={this.props.cid}
+              handleCollasible={this.props.handleCollasible}
             />
           </main>
           <Footer linkAdalab={linkAdalab}/>

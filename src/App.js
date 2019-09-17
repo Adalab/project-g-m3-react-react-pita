@@ -19,23 +19,26 @@ class App extends Component {
 			mail : '',
 			linkedin : '',
 			github : '',
-			namePalette : ''
+      namePalette : ''
 		}, 
 		defaultInput : {
 			name: 'Nombre y apellidos',
 			job: 'Front-end developer',
 			image: DefaultImg
-		  }
+    },
+    cid:'c01'
 
 	}
     this.onChangeListener = this.onChangeListener.bind(this);
     this.onClickPalette = this.onClickPalette.bind(this);
+    this.handleCollasible=this.handleCollasible.bind(this);
     this.getUser = this.getUser.bind(this);
   }
 
   componentDidMount() {
     this.getUser();
   }
+
 
   getUser() {
     const ls = JSON.parse(localStorage.getItem('User'));
@@ -80,6 +83,21 @@ class App extends Component {
     return namePalette;
   }
 
+  handleCollasible(event){
+    const newCid = event.currentTarget.getAttribute('data-id');
+    this.setState(prevState => {
+        if (newCid === prevState.cid) {
+          return {
+            cid: null
+          }
+        }else {
+          return{
+            cid: newCid
+          }
+        }
+    });
+  }
+
   render() {
     return (
     //   <LandingMain />
@@ -88,6 +106,8 @@ class App extends Component {
         formObject={this.state.formObject}
         onChangeListener={this.onChangeListener}
         onClickPalette={this.onClickPalette}
+        cid={this.state.cid}
+        handleCollasible={this.handleCollasible}
 
       />
     );
