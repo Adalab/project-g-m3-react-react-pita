@@ -3,6 +3,7 @@ import Header from './Header';
 import CardPreview from './CardPreview';
 import CardForm from './CardForm';
 import Footer from './Footer';
+import PropTypes from 'prop-types'; 
 
 const linkAdalab = 'https://adalab.es/';
 
@@ -35,5 +36,12 @@ class Cards extends React.Component {
     );
   }
 }
+
+Cards.propTypes = {
+  defaultInput: PropTypes.object,
+  formObject: PropTypes.object,
+  onKeyUpListener: PropTypes.func.isRequired,
+  onClickPalette: PropTypes.func.isRequired
+}; 
 
 export default Cards;

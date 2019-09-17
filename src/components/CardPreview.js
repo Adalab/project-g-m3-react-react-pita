@@ -1,6 +1,7 @@
 import React  from 'react';
 import Reset from './Reset';
 import Card from './Card';
+import PropTypes from 'prop-types'; 
 
 class CardPreview extends React.Component {
     render() {
@@ -18,5 +19,10 @@ class CardPreview extends React.Component {
         )
     }
 }
+
+CardPreview.propTypes = {
+  defaultInput: PropTypes.object,
+  formObject: PropTypes.object
+}; 
 
 export default CardPreview;

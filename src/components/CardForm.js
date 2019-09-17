@@ -125,10 +125,11 @@ class CardForm extends React.Component {
 }
 
 CardForm.propTypes = {
-	color: PropTypes.array,
-    palette : PropTypes.number, 
+    color: PropTypes.arrayOf(PropTypes.string),
+    color2: PropTypes.arrayOf(PropTypes.string),
+    color3: PropTypes.arrayOf(PropTypes.string),
     onChangeListener : PropTypes.func,
-    onClickPalette : PropTypes.func
+    formObject: PropTypes.object
     // linkAdalab: PropTypes.string, 
 }; 
 

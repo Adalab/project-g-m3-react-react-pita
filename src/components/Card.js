@@ -38,14 +38,8 @@ class Card extends React.Component {
 }
 
 Card.propTypes = {
-    FullName:PropTypes.string,
-    job:PropTypes.string,
-    phone : PropTypes.string,
-    mail : PropTypes.string,
-    linkedin : PropTypes.string,
-    github : PropTypes.string,
-    namePalette : PropTypes.string,
-    defaultInput:PropTypes.object
+  defaultInput: PropTypes.object,
+  formObject: PropTypes.object
 
     // linkAdalab: PropTypes.string, 
 }; 
