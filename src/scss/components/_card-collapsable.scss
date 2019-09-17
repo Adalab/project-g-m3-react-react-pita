@@ -8,6 +8,9 @@
   cursor: pointer;
   padding: 10px 0;
   @include flex-center;
+  @media all and (min-width: $tablet) {
+    width: 330px;
+  }
 }
 
 .collapsable__title {
