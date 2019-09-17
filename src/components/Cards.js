@@ -13,7 +13,7 @@ const colorPallete3 = ['#3e5b65', '#eab052', '#a0c0cf'];
 
 class Cards extends React.Component {
   render() {
-	  const {defaultInput, formObject, onChangeListener, onClickPalette, handleFilePicker, handleCollasible, cid, uploadImage, getPreview, isAvatarDefault} = this.props
+	  const {defaultInput, formObject, onChangeListener, onClickPalette, updateAvatar, handleCollasible, cid, isAvatarDefault } = this.props
     return (
       <React.Fragment>
         <div className="page__cards">
@@ -29,11 +29,9 @@ class Cards extends React.Component {
               onClickPalette={onClickPalette}
               formObject={formObject}
               cid={cid}
-              handleCollasible={handleCollasible}
-              handleFilePicker={handleFilePicker}
-              uploadImage={uploadImage}
-              getPreview={getPreview}
               isAvatarDefault={isAvatarDefault}
+              handleCollasible={handleCollasible}
+              updateAvatar={updateAvatar}
             />
           </main>
           <Footer linkAdalab={linkAdalab}/>

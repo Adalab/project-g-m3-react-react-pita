@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 class Card extends React.Component {
   render() {
-	const { defaultInput, formObject } = this.props
+  const { defaultInput, formObject } = this.props
+  
     return (
       <div className={`preview-card js__preview-card preview-card-${formObject.namePalette}`}>
         <div className="preview-card__title-container">

@@ -1,10 +1,23 @@
 import React from 'react';
 import Collapsables from './Collapsables';
+import GetAvatar from './GetAvatar';
 import PropTypes from 'prop-types'; 
+
 
 class CardForm extends React.Component {
     render() {
-		const {formObject, onClickPalette, color, color2, color3, onChangeListener, uploadImage, myFileField, handleFilePicker, handleCollasible, cid, isAvatarDefault, getPreview} = this.props
+        const {
+            formObject,
+            onClickPalette,
+            color,
+            color2,
+            color3,
+            onChangeListener,
+            handleCollasible,
+            cid,
+            updateAvatar,
+            isAvatarDefault
+        } = this.props
 		return (
             //*collapsable--rotate
 			<form className="form__container" action="POST">
@@ -65,15 +78,7 @@ class CardForm extends React.Component {
                         <input className="form__field form__field-job" type="text" value={formObject.job} id="job"
                             name="job" placeholder="Ej: Front-end unicorn" onChange={onChangeListener} required />
                     </div>
-                    <div className="fill__items items-photo">
-                        <label className="field__tag tag-photo" htmlFor="img-selector">Imagen de perfil</label>
-                        <input type="file" name="img-selector" id="img-selector"
-                            className=" js__profile-upload-btn no-visible" onChange={uploadImage} ref={myFileField} required />
-                        <div className="photo__box">
-                            <button type="button" className="form__field form__field-photo js__profile-trigger" onClick={handleFilePicker}>Añadir imagen</button>
-                            <div className="preview__photo js__profile-preview" style={getPreview(isAvatarDefault, formObject.avatar)}></div>
-                        </div>
-                    </div>
+                    <GetAvatar avatar={formObject.avatar} isAvatarDefault={isAvatarDefault} updateAvatar={updateAvatar}/>
                     <div className="fill__items items-phone">
                         <label className="field__tag tag-phone" htmlFor="phone">teléfono</label>
                         <input className="form__field form__field-phone" type="tel" value={formObject.phone}

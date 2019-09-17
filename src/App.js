@@ -4,6 +4,7 @@ import './scss/main.scss';
 import LandingMain from './components/LandingMain';
 import Cards from './components/Cards';
 import {defaultImg} from './components/defaultImg';
+import GetAvatar from './components/GetAvatar';
 
 class App extends Component {
   constructor(props) {
@@ -36,10 +37,6 @@ class App extends Component {
     this.onClickPalette = this.onClickPalette.bind(this);
     this.handleCollasible=this.handleCollasible.bind(this);
     this.getUser = this.getUser.bind(this);
-    this.handleFilePicker = this.handleFilePicker.bind(this);
-    this.uploadImage = this.uploadImage.bind(this);
-    this.getImage = this.getImage.bind(this);
-    this.getPreview = this.getPreview.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
   }
 
@@ -50,9 +47,9 @@ class App extends Component {
   getUser() {
     const ls = JSON.parse(localStorage.getItem('User'));
     if (ls !== null) {
-      this.setState({
-        formObject : ls.formObject
-      })
+      this.setState((prevState) => ({
+        formObject : {...prevState.formObject, ...ls.formObject}
+      }));
     };
   }
 
@@ -106,8 +103,7 @@ class App extends Component {
   }
 
   updateAvatar(img) {
-    const {formObject} = this.state;
-    this.setState(prevState => {
+    this.setState(({formObject}) => {
       const newProfile = {...formObject, avatar: img};
       return {
         formObject: newProfile,
@@ -116,25 +112,6 @@ class App extends Component {
     });
   }
   
-  uploadImage(event) {
-    const myFile = event.currentTarget.files[0];
-    this.fr.addEventListener('load', this.getImage);
-    this.fr.readAsDataURL(myFile);
-  }
-  
-  getImage () {
-    const image = this.fr.result;
-    this.updateAvatar(image);
-  }
-
-  getPreview(isDefault, image) {
-    return (!isDefault) ? {backgroundImage: `url(${image})`} : {};
-  }
-
-  handleFilePicker() {
-    this.myFileField.current.click(); 
-  }
-
   render() {
     return (
       <Switch>
@@ -142,14 +119,12 @@ class App extends Component {
         <Route path="/cards" render={() => <Cards 
           defaultInput={this.state.defaultInput}
           formObject={this.state.formObject}
+          isAvatarDefault={this.state.isAvatarDefault}
           onChangeListener={this.onChangeListener}
           onClickPalette={this.onClickPalette}
           cid={this.state.cid}
-          handleCollasible={this.handleCollasible} 
-          handleFilePicker={this.handleFilePicker}
-          uploadImage={this.uploadImage}
-          getPreview={this.getPreview}
-          isAvatarDefault={this.isAvatarDefault}/>}></Route>
+          handleCollasible={this.handleCollasible}
+          updateAvatar={this.updateAvatar}/>}></Route>
       </Switch>
     );
   }
