@@ -3,8 +3,8 @@ import Collapsables from './Collapsables';
 import PropTypes from 'prop-types'; 
 
 class CardForm extends React.Component {
-	render() {
-		const {formObject, onClickPalette, color, color2, color3, onChangeListener, uploadImage, myFileField, handleFilePicker, handleCollasible, cid, avatar, isAvatarDefault, getPreview} = this.props
+    render() {
+		const {formObject, onClickPalette, color, color2, color3, onChangeListener, uploadImage, myFileField, handleFilePicker, handleCollasible, cid, isAvatarDefault, getPreview} = this.props
 		return (
             //*collapsable--rotate
 			<form className="form__container" action="POST">
@@ -71,7 +71,7 @@ class CardForm extends React.Component {
                             className=" js__profile-upload-btn no-visible" onChange={uploadImage} ref={myFileField} required />
                         <div className="photo__box">
                             <button type="button" className="form__field form__field-photo js__profile-trigger" onClick={handleFilePicker}>Añadir imagen</button>
-                            <div className="preview__photo js__profile-preview" style={getPreview(isAvatarDefault, avatar)}></div>
+                            <div className="preview__photo js__profile-preview" style={getPreview(isAvatarDefault, formObject.avatar)}></div>
                         </div>
                     </div>
                     <div className="fill__items items-phone">

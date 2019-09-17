@@ -13,7 +13,7 @@ const colorPallete3 = ['#3e5b65', '#eab052', '#a0c0cf'];
 
 class Cards extends React.Component {
   render() {
-	  const {defaultInput, formObject, onChangeListener, onClickPalette, handleCollasible, cid, handleFilePicker, uploadImage, getPreview, avatar, isAvatarDefault} = this.props
+	  const {defaultInput, formObject, onChangeListener, onClickPalette, handleFilePicker, handleCollasible, cid, uploadImage, getPreview, isAvatarDefault} = this.props
     return (
       <React.Fragment>
         <div className="page__cards">
@@ -22,7 +22,6 @@ class Cards extends React.Component {
             <CardPreview
               defaultInput = {defaultInput}
               formObject={formObject}
-              avatar={avatar}
                />
             <CardForm 
               color={colorPallete1} color2={colorPallete2} color3={colorPallete3} 
@@ -34,7 +33,6 @@ class Cards extends React.Component {
               handleFilePicker={handleFilePicker}
               uploadImage={uploadImage}
               getPreview={getPreview}
-              avatar={avatar} 
               isAvatarDefault={isAvatarDefault}
             />
           </main>
@@ -48,7 +46,7 @@ class Cards extends React.Component {
 Cards.propTypes = {
   defaultInput: PropTypes.object,
   formObject: PropTypes.object,
-  onKeyUpListener: PropTypes.func.isRequired,
+  onChangeListener: PropTypes.func.isRequired,
   onClickPalette: PropTypes.func.isRequired
 }; 
 

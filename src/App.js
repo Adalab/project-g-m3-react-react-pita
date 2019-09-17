@@ -4,8 +4,6 @@ import './scss/main.scss';
 import LandingMain from './components/LandingMain';
 import Cards from './components/Cards';
 import {defaultImg} from './components/defaultImg';
-// import GetAvatar from './components/GetAvatar';
-/*<LandingMain />*/
 
 class App extends Component {
   constructor(props) {
@@ -23,7 +21,8 @@ class App extends Component {
 			mail : '',
 			linkedin : '',
 			github : '',
-      namePalette : ''
+      namePalette : '',
+      avatar: defaultImg
 		}, 
 		defaultInput : {
 			name: 'Nombre y apellidos',
@@ -32,9 +31,6 @@ class App extends Component {
     },
     cid:'c01',
     isAvatarDefault: true,
-    profile: {
-      avatar: defaultImg
-    }
 	}
     this.onChangeListener = this.onChangeListener.bind(this);
     this.onClickPalette = this.onClickPalette.bind(this);
@@ -110,18 +106,14 @@ class App extends Component {
   }
 
   updateAvatar(img) {
-    const {profile} = this.state;
+    const {formObject} = this.state;
     this.setState(prevState => {
-      const newProfile = {...profile, avatar: img};
+      const newProfile = {...formObject, avatar: img};
       return {
-        profile: newProfile,
+        formObject: newProfile,
         isAvatarDefault: false
       }
     });
-  }
-
-  handleFilePicker () {
-    this.myFileField.current.click();
   }
   
   uploadImage(event) {
@@ -139,6 +131,10 @@ class App extends Component {
     return (!isDefault) ? {backgroundImage: `url(${image})`} : {};
   }
 
+  handleFilePicker() {
+    this.myFileField.current.click(); 
+  }
+
   render() {
     return (
       <Switch>
@@ -153,7 +149,6 @@ class App extends Component {
           handleFilePicker={this.handleFilePicker}
           uploadImage={this.uploadImage}
           getPreview={this.getPreview}
-          avatar={this.state.profile.avatar} 
           isAvatarDefault={this.isAvatarDefault}/>}></Route>
       </Switch>
     );
