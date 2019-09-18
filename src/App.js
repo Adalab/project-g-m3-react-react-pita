@@ -5,6 +5,7 @@ import LandingMain from './components/LandingMain';
 import Cards from './components/Cards';
 import {defaultImg} from './components/defaultImg';
 import GetAvatar from './components/GetAvatar';
+import {petition} from './components/services/GetCard'; 
 
 class App extends Component {
   constructor(props) {
@@ -22,8 +23,8 @@ class App extends Component {
 			mail : '',
 			linkedin : '',
 			github : '',
-      namePalette : '',
-      avatar: defaultImg
+      		namePalette : '',
+      		avatar: defaultImg
 		}, 
 		defaultInput : {
 			name: 'Nombre y apellidos',
@@ -111,6 +112,14 @@ class App extends Component {
       }
     });
   }
+
+  sendRequest(){
+      petition(this.state.formObject)
+      .then (data => {
+          console.log(data); 
+      })
+  }
+
   
   render() {
     return (
@@ -124,7 +133,8 @@ class App extends Component {
           onClickPalette={this.onClickPalette}
           cid={this.state.cid}
           handleCollasible={this.handleCollasible}
-          updateAvatar={this.updateAvatar}/>}></Route>
+          updateAvatar={this.updateAvatar}
+          sendRequest={this.sendRequest}/>}></Route>
       </Switch>
     );
   }

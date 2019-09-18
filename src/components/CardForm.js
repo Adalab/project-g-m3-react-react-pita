@@ -110,7 +110,7 @@ class CardForm extends React.Component {
                 </div>
                 <div className={`form__submit collapsable__container collapsable__item ${cid === 'c03' ? '' : 'hidden'}`}>
                     <div className="form__success-button collapsable__container">
-                        <button type="submit" className="form__button button-card"> <i className="far fa-address-card"></i>
+						<button type="submit" className="form__button button-card" onClick={this.props.sendRequest}> <i className="far fa-address-card"></i>
                             <span className="form__button-text">Crear tarjeta</span>
                         </button>
                     </div>
