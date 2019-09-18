@@ -114,8 +114,7 @@ class App extends Component {
   }
   
   resetData() {
-    const resetObj = this.state.defaultInput;
-    console.log(resetObj)
+    localStorage.removeItem('User');
     this.setState({
       formObject : {
         palette : 1, 
