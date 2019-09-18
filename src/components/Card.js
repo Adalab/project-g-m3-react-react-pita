@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 
 class Card extends React.Component {
   render() {
-	const {defaultInput, formObject} = this.props
+  const { defaultInput, formObject } = this.props
+  
     return (
       <div className={`preview-card js__preview-card preview-card-${formObject.namePalette}`}>
         <div className="preview-card__title-container">
@@ -12,7 +13,7 @@ class Card extends React.Component {
           </h4>
           <h5 className="preview-card__career">{(formObject.job) ? formObject.job : defaultInput.job}</h5>
         </div>
-        <div className="preview-card__img js__profile-image" style={{ backgroundImage: `url(${defaultInput.image})` }}></div>
+        <div className="preview-card__img js__profile-image" style={{backgroundImage: `url(${formObject.avatar})`}}></div>
         <ul className="preview-card__social-list">
           <li className={`social-list__item ${(formObject.phone) ? '' : 'hidden'}`}><a href={`tel:${formObject.phone}`} target="_blank" rel="noopener noreferrer" className="social-list__link phone__link">
             <i className="fas fa-mobile-alt social-list__icon"></i>

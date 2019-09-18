@@ -13,7 +13,7 @@ const colorPallete3 = ['#3e5b65', '#eab052', '#a0c0cf'];
 
 class Cards extends React.Component {
   render() {
-	  const {defaultInput, formObject, onChangeListener, onClickPalette} = this.props
+	  const {defaultInput, formObject, onChangeListener, onClickPalette, updateAvatar, handleCollasible, cid, isAvatarDefault } = this.props
     return (
       <React.Fragment>
         <div className="page__cards">
@@ -28,8 +28,10 @@ class Cards extends React.Component {
               onChangeListener={onChangeListener}
               onClickPalette={onClickPalette}
               formObject={formObject}
-              cid={this.props.cid}
-              handleCollasible={this.props.handleCollasible}
+              cid={cid}
+              isAvatarDefault={isAvatarDefault}
+              handleCollasible={handleCollasible}
+              updateAvatar={updateAvatar}
             />
           </main>
           <Footer linkAdalab={linkAdalab}/>
@@ -42,7 +44,7 @@ class Cards extends React.Component {
 Cards.propTypes = {
   defaultInput: PropTypes.object,
   formObject: PropTypes.object,
-  onKeyUpListener: PropTypes.func.isRequired,
+  onChangeListener: PropTypes.func.isRequired,
   onClickPalette: PropTypes.func.isRequired
 }; 
 

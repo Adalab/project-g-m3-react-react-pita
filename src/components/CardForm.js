@@ -1,20 +1,33 @@
 import React from 'react';
 import Collapsables from './Collapsables';
+import GetAvatar from './GetAvatar';
 import PropTypes from 'prop-types'; 
 
+
 class CardForm extends React.Component {
-	render() {
-		const {formObject, onClickPalette, color, color2, color3, onChangeListener} = this.props
+    render() {
+        const {
+            formObject,
+            onClickPalette,
+            color,
+            color2,
+            color3,
+            onChangeListener,
+            handleCollasible,
+            cid,
+            updateAvatar,
+            isAvatarDefault
+        } = this.props
 		return (
             //*collapsable--rotate
 			<form className="form__container" action="POST">
 				<Collapsables >
 				<fieldset className="collapsable user_colors">
-                <div onClick={this.props.handleCollasible} className="collapsable__header collapsable__colors"  data-id="c01" > <i className="far fa-object-ungroup txt__color--orange"></i>
+                <div onClick={handleCollasible} className="collapsable__header collapsable__colors"  data-id="c01" > <i className="far fa-object-ungroup txt__color--orange"></i>
                 <h2 className="collapsable__title title__colors">Diseña</h2>
-                <i className={`fas fa-chevron-down txt__color--grey-dark ${this.props.cid === 'c01' ? 'collapsable--rotate' : ''}`}></i>
+                <i className={`fas fa-chevron-down txt__color--grey-dark ${cid === 'c01' ? 'collapsable--rotate' : ''}`}></i>
                 </div>
-                <div id="c01" className={`palette collapsable__item collapsable--visible  ${this.props.cid === 'c01' ? '' : 'hidden'}`} >
+                <div id="c01" className={`palette collapsable__item collapsable--visible  ${cid === 'c01' ? '' : 'hidden'}`} >
                     <label className="palette__label" htmlFor="p1">colores</label>
                     <div className="palette__container-colors">
                         <div className="input-box">
@@ -51,11 +64,11 @@ class CardForm extends React.Component {
 				</Collapsables>
 				<Collapsables>
 				<fieldset className="collapsable form__fill">
-                <div className="collapsable__header collapsable__fill" onClick={this.props.handleCollasible} data-id="c02"> <i className="far fa-keyboard txt__color--orange"></i>
+                <div className="collapsable__header collapsable__fill" onClick={handleCollasible} data-id="c02"> <i className="far fa-keyboard txt__color--orange"></i>
                     <h3 className="collapsable__title title__fill">rellena</h3>
-                    <i className={`fas fa-chevron-down txt__color--grey-dark ${this.props.cid === 'c02' ? 'collapsable--rotate' : ''}`}></i>
+                    <i className={`fas fa-chevron-down txt__color--grey-dark ${cid === 'c02' ? 'collapsable--rotate' : ''}`}></i>
                 </div>
-                <div id="c02" className={`fill__container collapsable__item  ${this.props.cid === 'c02' ? '' : 'hidden'}`}>
+                <div id="c02" className={`fill__container collapsable__item  ${cid === 'c02' ? '' : 'hidden'}`}>
                     <div className="fill__items items-name">
                         <label className="field__tag tag-name" htmlFor="FullName">nombre completo</label>
                         <input className="form__field form__field-name" type="text" value={formObject.FullName} id="FullName" name="FullName" placeholder="Ej: Sally Jill" required onChange={onChangeListener}/>
@@ -65,15 +78,7 @@ class CardForm extends React.Component {
                         <input className="form__field form__field-job" type="text" value={formObject.job} id="job"
                             name="job" placeholder="Ej: Front-end unicorn" onChange={onChangeListener} required />
                     </div>
-                    <div className="fill__items items-photo">
-                        <label className="field__tag tag-photo" htmlFor="img-selector">Imagen de perfil</label>
-                        <input type="file" name="img-selector" id="img-selector"
-                            className=" js__profile-upload-btn no-visible" required />
-                        <div className="photo__box">
-                            <button type="button" className="form__field form__field-photo js__profile-trigger">Añadir imagen</button>
-                            <div className="preview__photo js__profile-preview"></div>
-                        </div>
-                    </div>
+                    <GetAvatar avatar={formObject.avatar} isAvatarDefault={isAvatarDefault} updateAvatar={updateAvatar}/>
                     <div className="fill__items items-phone">
                         <label className="field__tag tag-phone" htmlFor="phone">teléfono</label>
                         <input className="form__field form__field-phone" type="tel" value={formObject.phone}
@@ -99,11 +104,11 @@ class CardForm extends React.Component {
 				</Collapsables>
 				<Collapsables>
 				<div className="collapsable">
-                <div className="collapsable__header" onClick={this.props.handleCollasible} data-id="c03"> <i className="fas fa-share-alt txt__color--orange"></i>
+                <div className="collapsable__header" onClick={handleCollasible} data-id="c03"> <i className="fas fa-share-alt txt__color--orange"></i>
                     <h2 className="collapsable__title">Comparte</h2>
-                    <i className={`fas fa-chevron-down txt__color--grey-dark ${this.props.cid === 'c03' ? 'collapsable--rotate' : ''}`}></i>
+                    <i className={`fas fa-chevron-down txt__color--grey-dark ${cid === 'c03' ? 'collapsable--rotate' : ''}`}></i>
                 </div>
-                <div className={`form__submit collapsable__container collapsable__item ${this.props.cid === 'c03' ? '' : 'hidden'}`}>
+                <div className={`form__submit collapsable__container collapsable__item ${cid === 'c03' ? '' : 'hidden'}`}>
                     <div className="form__success-button collapsable__container">
                         <button type="submit" className="form__button button-card"> <i className="far fa-address-card"></i>
                             <span className="form__button-text">Crear tarjeta</span>

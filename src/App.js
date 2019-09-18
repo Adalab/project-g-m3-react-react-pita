@@ -3,11 +3,16 @@ import { Route, Switch } from 'react-router-dom';
 import './scss/main.scss';
 import LandingMain from './components/LandingMain';
 import Cards from './components/Cards';
-import DefaultImg from './components/DefaultImg';
+import {defaultImg} from './components/defaultImg';
+import GetAvatar from './components/GetAvatar';
 
 class App extends Component {
   constructor(props) {
     super(props);
+
+    this.fr = new FileReader();
+    this.myFileField = React.createRef();
+
     this.state = {
 		formObject : {
       palette : 1, 
@@ -17,33 +22,34 @@ class App extends Component {
 			mail : '',
 			linkedin : '',
 			github : '',
-      namePalette : ''
+      namePalette : '',
+      avatar: defaultImg
 		}, 
 		defaultInput : {
 			name: 'Nombre y apellidos',
 			job: 'Front-end developer',
-			image: DefaultImg
+			image: defaultImg
     },
-    cid:'c01'
-
+    cid:'c01',
+    isAvatarDefault: true,
 	}
     this.onChangeListener = this.onChangeListener.bind(this);
     this.onClickPalette = this.onClickPalette.bind(this);
     this.handleCollasible=this.handleCollasible.bind(this);
     this.getUser = this.getUser.bind(this);
+    this.updateAvatar = this.updateAvatar.bind(this);
   }
 
   componentDidMount() {
     this.getUser();
   }
 
-
   getUser() {
     const ls = JSON.parse(localStorage.getItem('User'));
     if (ls !== null) {
-      this.setState({
-        formObject : ls.formObject
-      })
+      this.setState((prevState) => ({
+        formObject : {...prevState.formObject, ...ls.formObject}
+      }));
     };
   }
 
@@ -96,6 +102,16 @@ class App extends Component {
     });
   }
 
+  updateAvatar(img) {
+    this.setState(({formObject}) => {
+      const newProfile = {...formObject, avatar: img};
+      return {
+        formObject: newProfile,
+        isAvatarDefault: false
+      }
+    });
+  }
+  
   render() {
     return (
       <Switch>
@@ -103,10 +119,12 @@ class App extends Component {
         <Route path="/cards" render={() => <Cards 
           defaultInput={this.state.defaultInput}
           formObject={this.state.formObject}
+          isAvatarDefault={this.state.isAvatarDefault}
           onChangeListener={this.onChangeListener}
           onClickPalette={this.onClickPalette}
           cid={this.state.cid}
-          handleCollasible={this.handleCollasible} />}></Route>
+          handleCollasible={this.handleCollasible}
+          updateAvatar={this.updateAvatar}/>}></Route>
       </Switch>
     );
   }
