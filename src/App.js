@@ -4,7 +4,6 @@ import './scss/main.scss';
 import LandingMain from './components/LandingMain';
 import Cards from './components/Cards';
 import {defaultImg} from './components/defaultImg';
-import GetAvatar from './components/GetAvatar';
 import {petition} from './components/services/GetCard'; 
 
 class App extends Component {
@@ -18,11 +17,11 @@ class App extends Component {
 		formObject : {
             palette : 1, 
             FullName : '',
-			job : '',
-            mail : '',
+			      job : '',
+            email : '',
             phone : '',
-			linkedin : '',
-			github : '',
+			      linkedin : '',
+			      github : '',
       		namePalette : '',
       		avatar: defaultImg
 		}, 
@@ -119,17 +118,17 @@ class App extends Component {
           palette : this.state.formObject.palette, 
           name : this.state.formObject.FullName,
           job : this.state.formObject.job, 
-          email : this.state.formObject.mail, 
+          email : this.state.formObject.email, 
           phone : this.state.formObject.phone, 
           linkedin : this.state.formObject.linkedin, 
           gitHub : this.state.formObject.gitHub, 
           photo : this.state.formObject.avatar, 
       }
-      
+      console.log(objectApi)
 
       petition(objectApi)
-      .then (response => {
-          console.log(response); 
+      .then (data => {
+          //console.log(data); 
       })
 
   }

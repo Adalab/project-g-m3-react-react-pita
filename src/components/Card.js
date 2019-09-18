@@ -19,7 +19,7 @@ class Card extends React.Component {
             <i className="fas fa-mobile-alt social-list__icon"></i>
           </a>
           </li>
-          <li className={`social-list__item ${(formObject.mail) ? '' : 'hidden'}`}><a href={`mailto:${formObject.mail}`} target="_blank" rel="noopener noreferrer" className="social-list__link email__link">
+          <li className={`social-list__item ${(formObject.email) ? '' : 'hidden'}`}><a href={`mailto:${formObject.email}`} target="_blank" rel="noopener noreferrer" className="social-list__link email__link">
             <i className="far fa-envelope social-list__icon"></i>
           </a>
           </li>

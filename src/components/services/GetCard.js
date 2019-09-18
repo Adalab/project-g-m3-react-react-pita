@@ -5,12 +5,13 @@ const endpoint = 'https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/car
 const petition = (json) => {
 	return fetch (endpoint, {
 		method: 'POST', 
-		body : JSON.stringify (json), 
+		body : JSON.stringify(json), 
 		headers: {
-			'content-type': 'application/json'
+			'content-type' : 'application/json'
 		}
 	})
 	.then(response => response.json())
+
 }
 
 

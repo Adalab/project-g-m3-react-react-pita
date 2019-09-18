@@ -72,12 +72,12 @@ class CardForm extends React.Component {
                 <div id="c02" className={`fill__container collapsable__item  ${cid === 'c02' ? '' : 'hidden'}`}>
                     <div className="fill__items items-name">
                         <label className="field__tag tag-name" htmlFor="FullName">nombre completo</label>
-                        <input className="form__field form__field-name" type="text" value={formObject.FullName} id="FullName" name="FullName" placeholder="Ej: Sally Jill" required onChange={onChangeListener}/>
+                        <input className="form__field form__field-name" type="text" value={formObject.FullName} id="FullName" name="FullName" placeholder="Ej: Sally Jill"  onChange={onChangeListener}/>
                     </div>
                     <div className="fill__items items-job">
                         <label className="field__tag tag-job" htmlFor="job">puesto</label>
                         <input className="form__field form__field-job" type="text" value={formObject.job} id="job"
-                            name="job" placeholder="Ej: Front-end unicorn" onChange={onChangeListener} required />
+                            name="job" placeholder="Ej: Front-end unicorn" onChange={onChangeListener}  />
                     </div>
                     <GetAvatar avatar={formObject.avatar} isAvatarDefault={isAvatarDefault} updateAvatar={updateAvatar}/>
                     <div className="fill__items items-phone">
@@ -85,20 +85,20 @@ class CardForm extends React.Component {
                         <input className="form__field form__field-phone" type="tel" value={formObject.phone}
                             id="phone" name="phone" placeholder="Ej:555-55-55-55" onChange={onChangeListener}/>
                         <div className="fill__items items-email">
-                            <label className="field__tag tag-mail" htmlFor="mail">email</label>
-                            <input className="form__field form__field-mail" type="email" value={formObject.mail}
-                                id="mail" name="mail" placeholder="Ej:sally-hill@gmail.com" onChange={onChangeListener} required />
+                            <label className="field__tag tag-mail" htmlFor="email">email</label>
+                            <input className="form__field form__field-mail" type="email" value={formObject.email}
+                                id="email" name="email" placeholder="Ej:sally-hill@gmail.com" onChange={onChangeListener}  />
                         </div>
                     </div>
                     <div className="fill__items items-linkedin">
                         <label className="field__tag tag-linkedin" htmlFor="linkedin">linkedin</label>
                         <input className="form__field form__field-linkedin" type="text" value={formObject.linkedin}
-                            id="linkedin" name="linkedin" placeholder="Ej:sally.hill" onChange={onChangeListener} required />
+                            id="linkedin" name="linkedin" placeholder="Ej:sally.hill" onChange={onChangeListener}  />
                     </div>
                     <div className="fill__items items-github">
                         <label className="field__tag tag-github" htmlFor="github">github</label>
                         <input className="form__field form__field-github" type="text" value={formObject.github}
-                            id="github" name="github" placeholder="Ej:@sally-hill" onChange={onChangeListener} required />
+                            id="github" name="github" placeholder="Ej:@sally-hill" onChange={onChangeListener}  />
                     </div>
                 </div>
             </fieldset>
