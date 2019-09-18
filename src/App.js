@@ -16,11 +16,11 @@ class App extends Component {
 
     this.state = {
 		formObject : {
-      palette : 1, 
-      FullName : '',
+            palette : 1, 
+            FullName : '',
 			job : '',
-			phone : '',
-			mail : '',
+            mail : '',
+            phone : '',
 			linkedin : '',
 			github : '',
       		namePalette : '',
@@ -39,6 +39,7 @@ class App extends Component {
     this.handleCollasible=this.handleCollasible.bind(this);
     this.getUser = this.getUser.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
+    this.sendRequest = this.sendRequest.bind(this);
   }
 
   componentDidMount() {
@@ -114,10 +115,23 @@ class App extends Component {
   }
 
   sendRequest(){
-      petition(this.state.formObject)
-      .then (data => {
-          console.log(data); 
+      const objectApi = {
+          palette : this.state.formObject.palette, 
+          name : this.state.formObject.FullName,
+          job : this.state.formObject.job, 
+          email : this.state.formObject.mail, 
+          phone : this.state.formObject.phone, 
+          linkedin : this.state.formObject.linkedin, 
+          gitHub : this.state.formObject.gitHub, 
+          photo : this.state.formObject.avatar, 
+      }
+      
+
+      petition(objectApi)
+      .then (response => {
+          console.log(response); 
       })
+
   }
 
   
