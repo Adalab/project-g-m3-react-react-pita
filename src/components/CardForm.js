@@ -131,11 +131,16 @@ class CardForm extends React.Component {
 }
 
 CardForm.propTypes = {
-    color: PropTypes.arrayOf(PropTypes.string),
-    color2: PropTypes.arrayOf(PropTypes.string),
-    color3: PropTypes.arrayOf(PropTypes.string),
-    onChangeListener : PropTypes.func,
-    formObject: PropTypes.object
+    color: PropTypes.arrayOf(PropTypes.string).isRequired,
+    color2: PropTypes.arrayOf(PropTypes.string).isRequired,
+    color3: PropTypes.arrayOf(PropTypes.string).isRequired,
+    onChangeListener : PropTypes.func.isRequired,
+    formObject: PropTypes.object.isRequired,
+    onClickPalette: PropTypes.func.isRequired,
+    cid: PropTypes.string.isRequired,
+    isAvatarDefault: PropTypes.bool.isRequired,
+    handleCollasible: PropTypes.func.isRequired,
+    updateAvatar: PropTypes.func.isRequired,
     // linkAdalab: PropTypes.string, 
 }; 
 

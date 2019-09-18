@@ -43,10 +43,15 @@ class Cards extends React.Component {
 }
 
 Cards.propTypes = {
-  defaultInput: PropTypes.object,
-  formObject: PropTypes.object,
+  defaultInput: PropTypes.object.isRequired,
+  formObject: PropTypes.object.isRequired,
   onChangeListener: PropTypes.func.isRequired,
-  onClickPalette: PropTypes.func.isRequired
-}; 
+  onClickPalette: PropTypes.func.isRequired,
+  isAvatarDefault: PropTypes.bool.isRequired,
+  cid: PropTypes.string.isRequired,
+  handleCollasible: PropTypes.func.isRequired,
+  updateAvatar: PropTypes.func.isRequired,
+  resetData: PropTypes.func.isRequired
+};
 
 export default Cards;

@@ -131,16 +131,17 @@ class App extends Component {
   }
 
   render() {
+    const {defaultInput, formObject, isAvatarDefault, cid} = this.state;
     return (
       <Switch>
 	      <Route exact path="/" component={ LandingMain }></Route>
         <Route path="/cards" render={() => <Cards 
-          defaultInput={this.state.defaultInput}
-          formObject={this.state.formObject}
-          isAvatarDefault={this.state.isAvatarDefault}
+          defaultInput={defaultInput}
+          formObject={formObject}
+          isAvatarDefault={isAvatarDefault}
           onChangeListener={this.onChangeListener}
           onClickPalette={this.onClickPalette}
-          cid={this.state.cid}
+          cid={cid}
           handleCollasible={this.handleCollasible}
           updateAvatar={this.updateAvatar}
           resetData={this.resetData}/>}></Route>

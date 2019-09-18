@@ -21,8 +21,9 @@ class CardPreview extends React.Component {
 }
 
 CardPreview.propTypes = {
-  defaultInput: PropTypes.object,
-  formObject: PropTypes.object
+  defaultInput: PropTypes.object.isRequired,
+  formObject: PropTypes.object.isRequired,
+  resetData: PropTypes.func.isRequired
 }; 
 
 export default CardPreview;

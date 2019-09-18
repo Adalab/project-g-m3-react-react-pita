@@ -39,8 +39,8 @@ class Card extends React.Component {
 }
 
 Card.propTypes = {
-  defaultInput: PropTypes.object,
-  formObject: PropTypes.object
+  defaultInput: PropTypes.object.isRequired,
+  formObject: PropTypes.object.isRequired
 
     // linkAdalab: PropTypes.string, 
 }; 
