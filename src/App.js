@@ -127,8 +127,7 @@ class App extends Component {
         github : '',
         namePalette : '',
         avatar: defaultImg
-      },
-      isAvatarDefault: false
+      }
     })
   }
 
