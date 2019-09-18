@@ -26,9 +26,9 @@ class App extends Component {
       avatar: defaultImg
 		}, 
 		defaultInput : {
-			name: 'Nombre y apellidos',
-			job: 'Front-end developer',
-			image: defaultImg
+      FullName: 'Nombre y apellidos',
+      job: 'Front-end developer',
+      avatar: defaultImg
     },
     cid:'c01',
     isAvatarDefault: true,
@@ -38,6 +38,7 @@ class App extends Component {
     this.handleCollasible=this.handleCollasible.bind(this);
     this.getUser = this.getUser.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
+    this.resetData = this.resetData.bind(this);
   }
 
   componentDidMount() {
@@ -112,6 +113,25 @@ class App extends Component {
     });
   }
   
+  resetData() {
+    const resetObj = this.state.defaultInput;
+    console.log(resetObj)
+    this.setState({
+      formObject : {
+        palette : 1, 
+        FullName : '',
+        job : '',
+        phone : '',
+        mail : '',
+        linkedin : '',
+        github : '',
+        namePalette : '',
+        avatar: defaultImg
+      },
+      isAvatarDefault: false
+    })
+  }
+
   render() {
     return (
       <Switch>
@@ -124,7 +144,8 @@ class App extends Component {
           onClickPalette={this.onClickPalette}
           cid={this.state.cid}
           handleCollasible={this.handleCollasible}
-          updateAvatar={this.updateAvatar}/>}></Route>
+          updateAvatar={this.updateAvatar}
+          resetData={this.resetData}/>}></Route>
       </Switch>
     );
   }

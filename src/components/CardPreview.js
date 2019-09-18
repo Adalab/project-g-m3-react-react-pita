@@ -5,11 +5,11 @@ import PropTypes from 'prop-types';
 
 class CardPreview extends React.Component {
     render() {
-		const {defaultInput, formObject} = this.props
+		const {defaultInput, formObject, resetData} = this.props
         return(
             <section className="card-preview">
             <div className="card-preview__container">
-              <Reset />
+              <Reset resetData={resetData}/>
               <Card 
                 defaultInput = {defaultInput}
                 formObject={formObject}
