@@ -4,7 +4,6 @@ import './scss/main.scss';
 import LandingMain from './components/LandingMain';
 import Cards from './components/Cards';
 import {defaultImg} from './components/defaultImg';
-import GetAvatar from './components/GetAvatar';
 
 class App extends Component {
   constructor(props) {
@@ -100,7 +99,9 @@ class App extends Component {
             cid: newCid
           }
         }
-    });
+    }
+    // ,() => {localStorage.setItem('User', JSON.stringify(this.state))}
+    )
   }
 
   updateAvatar(img) {
