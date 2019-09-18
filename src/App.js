@@ -104,13 +104,13 @@ class App extends Component {
   }
 
   updateAvatar(img) {
-    this.setState(({formObject}) => {
-      const newProfile = {...formObject, avatar: img};
+    this.setState(prevState => {
+      const newProfile = {...prevState.formObject, avatar: img};
       return {
         formObject: newProfile,
         isAvatarDefault: false
       }
-    });
+    },() => {localStorage.setItem('User', JSON.stringify(this.state))})
   }
   
   resetData() {
