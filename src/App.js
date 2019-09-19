@@ -113,7 +113,8 @@ class App extends Component {
     });
   }
 
-  sendRequest(){
+  sendRequest(event){
+    event.preventDefault();
       const objectApi = {
           palette : this.state.formObject.palette, 
           name : this.state.formObject.FullName,
@@ -121,14 +122,15 @@ class App extends Component {
           email : this.state.formObject.email, 
           phone : this.state.formObject.phone, 
           linkedin : this.state.formObject.linkedin, 
-          gitHub : this.state.formObject.gitHub, 
+          github : this.state.formObject.github, 
           photo : this.state.formObject.avatar, 
       }
       console.log(objectApi)
-
-      petition(objectApi)
+     
+      const newObjectApi=JSON.stringify(objectApi)
+      petition(newObjectApi)
       .then (data => {
-          //console.log(data); 
+          console.log(data); 
       })
 
   }
