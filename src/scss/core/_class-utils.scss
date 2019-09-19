@@ -70,6 +70,8 @@
   display: inline-block;
   @include button-format ($blue-twitter, 3px, $box-shadow-button);
   @include link-none ($color-text-button);
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .button--reset {
