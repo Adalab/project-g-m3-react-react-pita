@@ -32,6 +32,9 @@ class App extends Component {
     },
     cid:'c01',
     isAvatarDefault: true,
+    successLink:'',
+    cardURL:''
+
 	}
     this.onChangeListener = this.onChangeListener.bind(this);
     this.onClickPalette = this.onClickPalette.bind(this);
@@ -130,11 +133,12 @@ class App extends Component {
       const newObjectApi=JSON.stringify(objectApi)
       petition(newObjectApi)
       .then (data => {
-          console.log(data); 
+        this.setState({
+        cardURL:data.cardURL
+        })
       })
 
   }
-
   
   render() {
     return (
