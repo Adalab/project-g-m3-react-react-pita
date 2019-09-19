@@ -7,16 +7,9 @@ import PropTypes from 'prop-types';
 class CardForm extends React.Component {
     render() {
         const {
-            formObject,
-            onClickPalette,
-            color,
-            color2,
-            color3,
-            onChangeListener,
-            handleCollasible,
-            cid,
-            updateAvatar,
-            isAvatarDefault
+            formObject, onClickPalette, color, color2, color3,
+            onChangeListener, handleCollasible, cid, updateAvatar,
+		    isAvatarDefault, sendRequest, cardURL, twitterText, hashtags, successLink
         } = this.props
 		return (
             //*collapsable--rotate
@@ -71,12 +64,12 @@ class CardForm extends React.Component {
                 <div id="c02" className={`fill__container collapsable__item  ${cid === 'c02' ? '' : 'hidden'}`}>
                     <div className="fill__items items-name">
                         <label className="field__tag tag-name" htmlFor="FullName">nombre completo</label>
-                        <input className="form__field form__field-name" type="text" value={formObject.FullName} id="FullName" name="FullName" placeholder="Ej: Sally Jill" required onChange={onChangeListener}/>
+                        <input className="form__field form__field-name" type="text" value={formObject.FullName} id="FullName" name="FullName" placeholder="Ej: Sally Jill"  onChange={onChangeListener}/>
                     </div>
                     <div className="fill__items items-job">
                         <label className="field__tag tag-job" htmlFor="job">puesto</label>
                         <input className="form__field form__field-job" type="text" value={formObject.job} id="job"
-                            name="job" placeholder="Ej: Front-end unicorn" onChange={onChangeListener} required />
+                            name="job" placeholder="Ej: Front-end unicorn" onChange={onChangeListener}  />
                     </div>
                     <GetAvatar avatar={formObject.avatar} isAvatarDefault={isAvatarDefault} updateAvatar={updateAvatar}/>
                     <div className="fill__items items-phone">
@@ -84,20 +77,20 @@ class CardForm extends React.Component {
                         <input className="form__field form__field-phone" type="tel" value={formObject.phone}
                             id="phone" name="phone" placeholder="Ej:555-55-55-55" onChange={onChangeListener}/>
                         <div className="fill__items items-email">
-                            <label className="field__tag tag-mail" htmlFor="mail">email</label>
-                            <input className="form__field form__field-mail" type="email" value={formObject.mail}
-                                id="mail" name="mail" placeholder="Ej:sally-hill@gmail.com" onChange={onChangeListener} required />
+                            <label className="field__tag tag-mail" htmlFor="email">email</label>
+                            <input className="form__field form__field-mail" type="email" value={formObject.email}
+                                id="email" name="email" placeholder="Ej:sally-hill@gmail.com" onChange={onChangeListener}  />
                         </div>
                     </div>
                     <div className="fill__items items-linkedin">
                         <label className="field__tag tag-linkedin" htmlFor="linkedin">linkedin</label>
                         <input className="form__field form__field-linkedin" type="text" value={formObject.linkedin}
-                            id="linkedin" name="linkedin" placeholder="Ej:sally.hill" onChange={onChangeListener} required />
+                            id="linkedin" name="linkedin" placeholder="Ej:sally.hill" onChange={onChangeListener}  />
                     </div>
                     <div className="fill__items items-github">
                         <label className="field__tag tag-github" htmlFor="github">github</label>
                         <input className="form__field form__field-github" type="text" value={formObject.github}
-                            id="github" name="github" placeholder="Ej:@sally-hill" onChange={onChangeListener} required />
+                            id="github" name="github" placeholder="Ej:@sally-hill" onChange={onChangeListener}  />
                     </div>
                 </div>
             </fieldset>
@@ -110,18 +103,19 @@ class CardForm extends React.Component {
                 </div>
                 <div className={`form__submit collapsable__container collapsable__item ${cid === 'c03' ? '' : 'hidden'}`}>
                     <div className="form__success-button collapsable__container">
-                        <button type="submit" className="form__button button-card"> <i className="far fa-address-card"></i>
+						<button type="submit" className="form__button button-card" onClick={sendRequest}> <i className="far fa-address-card"></i>
                             <span className="form__button-text">Crear tarjeta</span>
                         </button>
                     </div>
-                    <div className="form__success-twitter collapsable__container hidden">
-                        <h2 className="succes__title txt__color--grey-dark">La tarjeta ha sido creada con exito</h2>
-                        {/* <a href={this.props.linkAdalab} className="success__link" target="_blank">patata</a> */}
-                        {/* <a href={this.props.linkAdalab} className="success__button-twitter button-twitter twitter-share-button" target="_blank">
+                    <div className={`form__success-twitter collapsable__container ${successLink === true ? '' : 'hidden'}`}>
+                        <h2 className="succes__title txt__color--grey-dark">La tarjeta ha sido creada con éxito</h2>
+                        <a href={cardURL} className="success__link" >{cardURL}</a> 
+                        <a href={`https://twitter.com/intent/tweet?text=${twitterText}&url=${cardURL}&hashtags=${hashtags}`} className="success__button-twitter button-twitter twitter-share-button" >
                      <i className="fab fa-twitter "></i>
-                      <span className="success__button-text">Compartir en twitter</span>
-    				</a> */}
+                    <span className="success__button-text">Compartir en twitter</span>
+    				</a>
                     </div>
+                    <div className={`error-message ${successLink === false ? '' : 'hidden'}`}>Te ha faltado un campo: todos son requeridos menos el telefono</div>
                 </div>
             </div>
 			</Collapsables>

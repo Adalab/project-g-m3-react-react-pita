@@ -4,6 +4,7 @@ import './scss/main.scss';
 import LandingMain from './components/LandingMain';
 import Cards from './components/Cards';
 import {defaultImg} from './components/defaultImg';
+import {petition} from './components/services/GetCard'; 
 
 class App extends Component {
   constructor(props) {
@@ -14,15 +15,15 @@ class App extends Component {
 
     this.state = {
 		formObject : {
-      palette : 1, 
-      FullName : '',
-			job : '',
-			phone : '',
-			mail : '',
-			linkedin : '',
-			github : '',
-      namePalette : '',
-      avatar: defaultImg
+            palette : 1, 
+            FullName : '',
+			      job : '',
+            email : '',
+            phone : '',
+			      linkedin : '',
+			      github : '',
+      		namePalette : '',
+      		avatar: defaultImg
 		}, 
 		defaultInput : {
       FullName: 'Nombre y apellidos',
@@ -31,6 +32,11 @@ class App extends Component {
     },
     cid:'c01',
     isAvatarDefault: true,
+    successLink:'',
+    cardURL:'',
+    twitterText: encodeURIComponent('Hey! This is my new profile card :)'),
+    hashtags:encodeURIComponent('adalab,js,css')
+
 	}
     this.onChangeListener = this.onChangeListener.bind(this);
     this.onClickPalette = this.onClickPalette.bind(this);
@@ -38,6 +44,7 @@ class App extends Component {
     this.getUser = this.getUser.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
     this.resetData = this.resetData.bind(this);
+    this.sendRequest = this.sendRequest.bind(this);
   }
 
   componentDidMount() {
@@ -113,6 +120,31 @@ class App extends Component {
       }
     },() => {localStorage.setItem('User', JSON.stringify(this.state))})
   }
+
+  sendRequest(event){
+    event.preventDefault();
+      const objectApi = {
+          palette : this.state.formObject.palette, 
+          name : this.state.formObject.FullName,
+          job : this.state.formObject.job, 
+          email : this.state.formObject.email, 
+          phone : this.state.formObject.phone, 
+          linkedin : this.state.formObject.linkedin, 
+          github : this.state.formObject.github, 
+          photo : this.state.formObject.avatar, 
+      }
+      console.log(objectApi)
+     
+      const newObjectApi=JSON.stringify(objectApi)
+      petition(newObjectApi)
+      .then (data => {
+        this.setState({
+        cardURL:data.cardURL,
+        successLink:data.success
+        },()=>console.log(data))
+      })
+
+  }
   
   resetData() {
     localStorage.removeItem('User');
@@ -145,7 +177,13 @@ class App extends Component {
           cid={cid}
           handleCollasible={this.handleCollasible}
           updateAvatar={this.updateAvatar}
-          resetData={this.resetData}/>}></Route>
+          sendRequest={this.sendRequest}
+          cardURL={this.state.cardURL}
+          twitterText={this.state.twitterText}
+          hashtags={this.state.hashtags}
+          successLink={this.state.successLink}
+          resetData={this.resetData}
+          />}></Route>
       </Switch>
     );
   }

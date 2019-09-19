@@ -13,7 +13,7 @@ const colorPallete3 = ['#3e5b65', '#eab052', '#a0c0cf'];
 
 class Cards extends React.Component {
   render() {
-	  const {defaultInput, formObject, onChangeListener, onClickPalette, updateAvatar, handleCollasible, cid, isAvatarDefault, resetData } = this.props
+	  const {defaultInput, formObject, onChangeListener, onClickPalette, updateAvatar, handleCollasible, cid, isAvatarDefault, sendRequest, cardURL,twitterText, hashtags, successLink,resetData} = this.props
     return (
       <React.Fragment>
         <div className="page__cards">
@@ -32,7 +32,12 @@ class Cards extends React.Component {
               cid={cid}
               isAvatarDefault={isAvatarDefault}
               handleCollasible={handleCollasible}
-              updateAvatar={updateAvatar}
+			        updateAvatar={updateAvatar}
+              sendRequest={sendRequest}
+              cardURL={cardURL}
+              twitterText={twitterText}
+              hashtags={hashtags}
+              successLink={successLink}
             />
           </main>
           <Footer linkAdalab={linkAdalab}/>
