@@ -99,7 +99,7 @@ class App extends Component {
     this.setState(prevState => {
         if (newCid === prevState.cid) {
           return {
-            cid: null
+            cid: ''
           }
         }else {
           return{
