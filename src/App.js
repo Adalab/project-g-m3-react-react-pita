@@ -33,7 +33,9 @@ class App extends Component {
     cid:'c01',
     isAvatarDefault: true,
     successLink:'',
-    cardURL:''
+    cardURL:'',
+    twitterText: encodeURIComponent('Hey! This is my new profile card :)'),
+    hashtags:encodeURIComponent('adalab,js,css')
 
 	}
     this.onChangeListener = this.onChangeListener.bind(this);
@@ -135,7 +137,7 @@ class App extends Component {
       .then (data => {
         this.setState({
         cardURL:data.cardURL
-        })
+        },()=>console.log(data))
       })
 
   }
@@ -153,7 +155,11 @@ class App extends Component {
           cid={this.state.cid}
           handleCollasible={this.handleCollasible}
           updateAvatar={this.updateAvatar}
-          sendRequest={this.sendRequest}/>}></Route>
+          sendRequest={this.sendRequest}
+          cardURL={this.state.cardURL}
+          twitterText={this.state.twitterText}
+          hashtags={this.state.hashtags}
+          />}></Route>
       </Switch>
     );
   }

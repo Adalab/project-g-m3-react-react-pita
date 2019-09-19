@@ -7,17 +7,9 @@ import PropTypes from 'prop-types';
 class CardForm extends React.Component {
     render() {
         const {
-            formObject,
-            onClickPalette,
-            color,
-            color2,
-            color3,
-            onChangeListener,
-            handleCollasible,
-            cid,
-            updateAvatar,
-			isAvatarDefault,
-			sendRequest
+            formObject, onClickPalette, color, color2, color3,
+            onChangeListener, handleCollasible, cid, updateAvatar,
+		    isAvatarDefault, sendRequest, cardURL, twitterText, hashtags
         } = this.props
 		return (
             //*collapsable--rotate
@@ -115,13 +107,13 @@ class CardForm extends React.Component {
                             <span className="form__button-text">Crear tarjeta</span>
                         </button>
                     </div>
-                    <div className="form__success-twitter collapsable__container hidden">
+                    <div className="form__success-twitter collapsable__container ">
                         <h2 className="succes__title txt__color--grey-dark">La tarjeta ha sido creada con exito</h2>
-                        {/* <a href={this.props.linkAdalab} className="success__link" target="_blank">patata</a> */}
-                        {/* <a href={this.props.linkAdalab} className="success__button-twitter button-twitter twitter-share-button" target="_blank">
+                        <a href={cardURL} className="success__link" >patata</a> 
+                        <a href={`https://twitter.com/intent/tweet?text=${twitterText}&url=${cardURL}&hashtags=${hashtags}`} className="success__button-twitter button-twitter twitter-share-button" >
                      <i className="fab fa-twitter "></i>
-                      <span className="success__button-text">Compartir en twitter</span>
-    				</a> */}
+                    <span className="success__button-text">Compartir en twitter</span>
+    				</a>
                     </div>
                 </div>
             </div>
