@@ -109,7 +109,7 @@ class CardForm extends React.Component {
                     </div>
                     <div className="form__success-twitter collapsable__container ">
                         <h2 className="succes__title txt__color--grey-dark">La tarjeta ha sido creada con exito</h2>
-                        <a href={cardURL} className="success__link" >patata</a> 
+                        <a href={cardURL} className="success__link" >{cardURL}</a> 
                         <a href={`https://twitter.com/intent/tweet?text=${twitterText}&url=${cardURL}&hashtags=${hashtags}`} className="success__button-twitter button-twitter twitter-share-button" >
                      <i className="fab fa-twitter "></i>
                     <span className="success__button-text">Compartir en twitter</span>
