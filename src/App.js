@@ -136,7 +136,8 @@ class App extends Component {
       petition(newObjectApi)
       .then (data => {
         this.setState({
-        cardURL:data.cardURL
+        cardURL:data.cardURL,
+        successLink:data.success
         },()=>console.log(data))
       })
 
@@ -159,6 +160,7 @@ class App extends Component {
           cardURL={this.state.cardURL}
           twitterText={this.state.twitterText}
           hashtags={this.state.hashtags}
+          successLink={this.state.successLink}
           />}></Route>
       </Switch>
     );
