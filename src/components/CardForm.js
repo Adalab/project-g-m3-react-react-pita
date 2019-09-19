@@ -28,9 +28,10 @@ class CardForm extends React.Component {
               <i className={`fas fa-chevron-down txt__color--grey-dark ${cid === 'c01' ? 'collapsable--rotate' : ''}`}></i>
             </div>
             <div id="c01" className={`palette collapsable__item collapsable--visible  ${cid === 'c01' ? '' : 'hidden'}`} >
-
-              <div className="palette__container-colors">
-                <label className="palette__label" htmlFor="p1">colores
+              <div className="palettes__container-colors">
+                <span>COLORES</span>
+                <div className="palettes">
+                <label className="palette__label input-box" htmlFor="p1">
                     <div className="input-box">
                     <input className="palette__radio js__radio1" id="p1" type="radio" value="1" name="palette" onChange={onClickPalette} checked={formObject.palette === 1} />
                     <ul className="colors">
@@ -40,7 +41,7 @@ class CardForm extends React.Component {
                     </ul>
                   </div>
                 </label>
-                <label className="palette__label" htmlFor="p2">
+                <label className="palette__label input-box" htmlFor="p2">
                   <div className="input-box">
                     <input className="palette__radio js__radio2" id="p2" type="radio" value="2"
                       name="palette" onChange={onClickPalette} checked={formObject.palette === 2} />
@@ -51,8 +52,7 @@ class CardForm extends React.Component {
                     </ul>
                   </div>
                 </label>
-
-                <label className="palette__label" htmlFor="p3">
+                <label className="palette__label input-box" htmlFor="p3">
                   <div className="input-box">
                     <input className="palette__radio js__radio3" id="p3" type="radio" value="3"
                       name="palette" onChange={onClickPalette} checked={formObject.palette === 3} />
@@ -63,6 +63,7 @@ class CardForm extends React.Component {
                     </ul>
                   </div>
                 </label>
+                </div>
               </div>
             </div>
           </fieldset>
