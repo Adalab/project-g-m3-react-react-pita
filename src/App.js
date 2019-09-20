@@ -160,6 +160,7 @@ class App extends Component {
         namePalette : '',
         avatar: defaultImg
       },
+      cid:'c01',
       successLink:''
     })
   }
