@@ -123,16 +123,7 @@ class App extends Component {
 
   sendRequest(event){
     event.preventDefault();
-      const objectApi = {
-          palette : this.state.formObject.palette, 
-          name : this.state.formObject.name,
-          job : this.state.formObject.job, 
-          email : this.state.formObject.email, 
-          phone : this.state.formObject.phone, 
-          linkedin : this.state.formObject.linkedin, 
-          github : this.state.formObject.github, 
-          photo : this.state.formObject.photo, 
-      }
+      const objectApi = {...this.state.formObject};
       console.log(objectApi)
      
       const newObjectApi=JSON.stringify(objectApi)
