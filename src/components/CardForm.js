@@ -69,8 +69,8 @@ class CardForm extends React.Component {
                 </div>
                 <div id="c02" className={`fill__container collapsable__item  ${cid === 'c02' ? '' : 'hidden'}`}>
                     <div className="fill__items items-name">
-                        <label className="field__tag tag-name" htmlFor="FullName">nombre completo</label>
-                        <input className="form__field form__field-name" type="text" value={formObject.FullName} id="FullName" name="FullName" placeholder="Ej: Sally Jill"  onChange={onChangeListener}/>
+                        <label className="field__tag tag-name" htmlFor="name">nombre completo</label>
+                        <input className="form__field form__field-name" type="text" value={formObject.name} id="name" name="name" placeholder="Ej: Sally Jill"  onChange={onChangeListener}/>
                     </div>
                     <div className="fill__items items-job">
                         <label className="field__tag tag-job" htmlFor="job">puesto</label>

@@ -16,7 +16,7 @@ class App extends Component {
     this.state = {
 		formObject : {
             palette : 1, 
-            FullName : '',
+            name : '',
 			      job : '',
             email : '',
             phone : '',
@@ -26,7 +26,7 @@ class App extends Component {
       		avatar: defaultImg
 		}, 
 		defaultInput : {
-      FullName: 'Nombre y apellidos',
+      name: 'Nombre y apellidos',
       job: 'Front-end developer',
       avatar: defaultImg
     },
@@ -125,7 +125,7 @@ class App extends Component {
     event.preventDefault();
       const objectApi = {
           palette : this.state.formObject.palette, 
-          name : this.state.formObject.FullName,
+          name : this.state.formObject.name,
           job : this.state.formObject.job, 
           email : this.state.formObject.email, 
           phone : this.state.formObject.phone, 
@@ -151,7 +151,7 @@ class App extends Component {
     this.setState({
       formObject : {
         palette : 1, 
-        FullName : '',
+        name : '',
         job : '',
         phone : '',
         email : '',

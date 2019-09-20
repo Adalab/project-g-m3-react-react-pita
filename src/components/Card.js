@@ -9,7 +9,7 @@ class Card extends React.Component {
       <div className={`preview-card js__preview-card preview-card-${formObject.namePalette}`}>
         <div className="preview-card__title-container">
           <h4 className="preview-card__name">
-            {(formObject.FullName) ? formObject.FullName : defaultInput.FullName}
+            {(formObject.name) ? formObject.name : defaultInput.name}
           </h4>
           <h5 className="preview-card__career">{(formObject.job) ? formObject.job : defaultInput.job}</h5>
         </div>
