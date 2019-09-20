@@ -33,7 +33,7 @@ class GetAvatar extends Component {
   }
 
   render() {
-    const { avatar, isAvatarDefault } = this.props
+    const { photo, isAvatarDefault } = this.props
     
     return (
       <div className="fill__items items-photo">
@@ -42,7 +42,7 @@ class GetAvatar extends Component {
           className=" js__profile-upload-btn no-visible" onChange={this.uploadImage} ref={this.myFileField} required />
         <div className="photo__box">
           <button type="button" className="form__field form__field-photo js__profile-trigger" onClick={this.handleFilePicker}>Añadir imagen</button>
-          <div className="preview__photo js__profile-preview" style={this.getPreview(isAvatarDefault, avatar)}></div>
+          <div className="preview__photo js__profile-preview" style={this.getPreview(isAvatarDefault, photo)}></div>
         </div>
       </div>
     );
@@ -51,7 +51,7 @@ class GetAvatar extends Component {
 
 GetAvatar.propTypes = {
  isAvatarDefault: PropTypes.bool.isRequired,
- avatar: PropTypes.string.isRequired,
+ photo: PropTypes.string.isRequired,
 };
 
 export default GetAvatar;

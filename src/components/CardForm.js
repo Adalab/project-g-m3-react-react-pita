@@ -77,7 +77,7 @@ class CardForm extends React.Component {
                         <input className="form__field form__field-job" type="text" value={formObject.job} id="job"
                             name="job" placeholder="Ej: Front-end unicorn" onChange={onChangeListener}  />
                     </div>
-                    <GetAvatar avatar={formObject.avatar} isAvatarDefault={isAvatarDefault} updateAvatar={updateAvatar}/>
+                    <GetAvatar photo={formObject.photo} isAvatarDefault={isAvatarDefault} updateAvatar={updateAvatar}/>
                     <div className="fill__items items-phone">
                         <label className="field__tag tag-phone" htmlFor="phone">teléfono</label>
                         <input className="form__field form__field-phone" type="tel" value={formObject.phone}

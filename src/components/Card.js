@@ -13,7 +13,7 @@ class Card extends React.Component {
           </h4>
           <h5 className="preview-card__career">{(formObject.job) ? formObject.job : defaultInput.job}</h5>
         </div>
-        <div className="preview-card__img js__profile-image" style={{backgroundImage: `url(${formObject.avatar})`}}></div>
+        <div className="preview-card__img js__profile-image" style={{backgroundImage: `url(${formObject.photo})`}}></div>
         <ul className="preview-card__social-list">
           <li className={`social-list__item ${(formObject.phone) ? '' : 'hidden'}`}><a href={`tel:${formObject.phone}`} target="_blank" rel="noopener noreferrer" className="social-list__link phone__link">
             <i className="fas fa-mobile-alt social-list__icon"></i>

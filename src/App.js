@@ -23,12 +23,12 @@ class App extends Component {
 			      linkedin : '',
 			      github : '',
       		namePalette : '',
-      		avatar: defaultImg
+      		photo: defaultImg
 		}, 
 		defaultInput : {
       name: 'Nombre y apellidos',
       job: 'Front-end developer',
-      avatar: defaultImg
+      photo: defaultImg
     },
     cid:'c01',
     isAvatarDefault: true,
@@ -113,7 +113,7 @@ class App extends Component {
 
   updateAvatar(img) {
     this.setState(prevState => {
-      const newProfile = {...prevState.formObject, avatar: img};
+      const newProfile = {...prevState.formObject, photo: img};
       return {
         formObject: newProfile,
         isAvatarDefault: false
@@ -131,7 +131,7 @@ class App extends Component {
           phone : this.state.formObject.phone, 
           linkedin : this.state.formObject.linkedin, 
           github : this.state.formObject.github, 
-          photo : this.state.formObject.avatar, 
+          photo : this.state.formObject.photo, 
       }
       console.log(objectApi)
      
@@ -158,7 +158,7 @@ class App extends Component {
         linkedin : '',
         github : '',
         namePalette : '',
-        avatar: defaultImg
+        photo: defaultImg
       },
       cid:'c01',
       successLink:''
