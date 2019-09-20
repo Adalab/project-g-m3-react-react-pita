@@ -1,28 +1,29 @@
 import React  from 'react';
 import Reset from './Reset';
 import Card from './Card';
+import PropTypes from 'prop-types'; 
 
 class CardPreview extends React.Component {
     render() {
+		const {defaultInput, formObject, resetData} = this.props
         return(
             <section className="card-preview">
             <div className="card-preview__container">
-              <Reset />
+              <Reset resetData={resetData}/>
               <Card 
-              defaultInput = {this.props.defaultInput}
-              palette={this.props.palette}
-              FullName={this.props.FullName}
-              job={this.props.job}
-              phone={this.props.phone}
-              mail={this.props.mail}
-              linkedin={this.props.linkedin}
-              github={this.props.github}
-              namePalette={this.props.namePalette}
+                defaultInput = {defaultInput}
+                formObject={formObject}
                />
             </div>
           </section>
         )
     }
 }
+
+CardPreview.propTypes = {
+  defaultInput: PropTypes.object.isRequired,
+  formObject: PropTypes.object.isRequired,
+  resetData: PropTypes.func.isRequired
+}; 
 
 export default CardPreview;

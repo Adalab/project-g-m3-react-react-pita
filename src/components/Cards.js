@@ -3,6 +3,7 @@ import Header from './Header';
 import CardPreview from './CardPreview';
 import CardForm from './CardForm';
 import Footer from './Footer';
+import PropTypes from 'prop-types'; 
 
 const linkAdalab = 'https://adalab.es/';
 
@@ -12,27 +13,31 @@ const colorPallete3 = ['#3e5b65', '#eab052', '#a0c0cf'];
 
 class Cards extends React.Component {
   render() {
+	  const {defaultInput, formObject, onChangeListener, onClickPalette, updateAvatar, handleCollasible, cid, isAvatarDefault, sendRequest, cardURL,twitterText, hashtags, successLink,resetData} = this.props
     return (
       <React.Fragment>
         <div className="page__cards">
           <Header />
           <main className="card__main">
             <CardPreview
-              defaultInput = {this.props.defaultInput}
-              FullName={this.props.FullName}
-              job={this.props.job}
-              phone={this.props.phone}
-              mail={this.props.mail}
-              linkedin={this.props.linkedin}
-              github={this.props.github}
-              namePalette={this.props.namePalette}
-              palette={this.props.palette}
+              defaultInput = {defaultInput}
+              formObject={formObject}
+              resetData={resetData}
                />
             <CardForm 
               color={colorPallete1} color2={colorPallete2} color3={colorPallete3} 
-              onKeyUpListener={this.props.onKeyUpListener}
-              onClickPalette={this.props.onClickPalette}
-              palette={this.props.palette}
+              onChangeListener={onChangeListener}
+              onClickPalette={onClickPalette}
+              formObject={formObject}
+              cid={cid}
+              isAvatarDefault={isAvatarDefault}
+              handleCollasible={handleCollasible}
+			        updateAvatar={updateAvatar}
+              sendRequest={sendRequest}
+              cardURL={cardURL}
+              twitterText={twitterText}
+              hashtags={hashtags}
+              successLink={successLink}
             />
           </main>
           <Footer linkAdalab={linkAdalab}/>
@@ -41,5 +46,17 @@ class Cards extends React.Component {
     );
   }
 }
+
+Cards.propTypes = {
+  defaultInput: PropTypes.object.isRequired,
+  formObject: PropTypes.object.isRequired,
+  onChangeListener: PropTypes.func.isRequired,
+  onClickPalette: PropTypes.func.isRequired,
+  isAvatarDefault: PropTypes.bool.isRequired,
+  cid: PropTypes.string.isRequired,
+  handleCollasible: PropTypes.func.isRequired,
+  updateAvatar: PropTypes.func.isRequired,
+  resetData: PropTypes.func.isRequired
+};
 
 export default Cards;

@@ -3,29 +3,31 @@ import PropTypes from 'prop-types';
 
 class Card extends React.Component {
   render() {
+  const { defaultInput, formObject } = this.props
+  
     return (
-      <div className={`preview-card js__preview-card preview-card-${this.props.namePalette}`}>
+      <div className={`preview-card js__preview-card preview-card-${formObject.namePalette}`}>
         <div className="preview-card__title-container">
           <h4 className="preview-card__name">
-            {(this.props.FullName) ? this.props.FullName : this.props.defaultInput.name}
+            {(formObject.name) ? formObject.name : defaultInput.name}
           </h4>
-          <h5 className="preview-card__career">{(this.props.job) ? this.props.job : this.props.defaultInput.job}</h5>
+          <h5 className="preview-card__career">{(formObject.job) ? formObject.job : defaultInput.job}</h5>
         </div>
-        <div className="preview-card__img js__profile-image" style={{ backgroundImage: `url(${this.props.defaultInput.image})` }}></div>
+        <div className="preview-card__img js__profile-image" style={{backgroundImage: `url(${formObject.photo})`}}></div>
         <ul className="preview-card__social-list">
-          <li className={`social-list__item ${(this.props.phone) ? '' : 'hidden'}`}><a href="#phone" target="_blank" className="social-list__link phone__link">
+          <li className={`social-list__item ${(formObject.phone) ? '' : 'hidden'}`}><a href={`tel:${formObject.phone}`} target="_blank" rel="noopener noreferrer" className="social-list__link phone__link">
             <i className="fas fa-mobile-alt social-list__icon"></i>
           </a>
           </li>
-          <li className={`social-list__item ${(this.props.mail) ? '' : 'hidden'}`}><a href="#email" target="_blank" className="social-list__link email__link">
+          <li className={`social-list__item ${(formObject.email) ? '' : 'hidden'}`}><a href={`mailto:${formObject.email}`} target="_blank" rel="noopener noreferrer" className="social-list__link email__link">
             <i className="far fa-envelope social-list__icon"></i>
           </a>
           </li>
-          <li className={`social-list__item ${(this.props.linkedin) ? '' : 'hidden'}`}> <a href="#linkedin" target="_blank" className="social-list__link linkedin__link">
+          <li className={`social-list__item ${(formObject.linkedin) ? '' : 'hidden'}`}> <a href={`https://www.linkedin.com/in/${formObject.linkedin}`} target="_blank" rel="noopener noreferrer" className="social-list__link linkedin__link">
             <i className="fab fa-linkedin-in social-list__icon"></i>
           </a>
           </li>
-          <li className={`social-list__item ${(this.props.github) ? '' : 'hidden'}`}> <a href="#github" target="_blank" className="social-list__link github__link">
+          <li className={`social-list__item ${(formObject.github) ? '' : 'hidden'}`}> <a href={`https://github.com/${formObject.github}`} target="_blank" rel="noopener noreferrer" className="social-list__link github__link">
             <i className="fab fa-github-alt social-list__icon"></i>
           </a>
 
@@ -37,14 +39,8 @@ class Card extends React.Component {
 }
 
 Card.propTypes = {
-    FullName:PropTypes.string,
-    job:PropTypes.string,
-    phone : PropTypes.string,
-    mail : PropTypes.string,
-    linkedin : PropTypes.string,
-    github : PropTypes.string,
-    namePalette : PropTypes.string,
-    defaultInput:PropTypes.object
+  defaultInput: PropTypes.object.isRequired,
+  formObject: PropTypes.object.isRequired
 
     // linkAdalab: PropTypes.string, 
 }; 

@@ -1,13 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
-
 class Collapsables extends React.Component {
   render () {
+    const {children} = this.props
       return (
         <React.Fragment>
-          {this.props.children}
+          {children}
         </React.Fragment>
       );
   }
