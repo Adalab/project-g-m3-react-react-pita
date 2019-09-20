@@ -154,12 +154,13 @@ class App extends Component {
         FullName : '',
         job : '',
         phone : '',
-        mail : '',
+        email : '',
         linkedin : '',
         github : '',
         namePalette : '',
         avatar: defaultImg
-      }
+      },
+      successLink:''
     })
   }
 
