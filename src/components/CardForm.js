@@ -29,8 +29,8 @@ class CardForm extends React.Component {
             </div>
             <div id="c01" className={`palette collapsable__item collapsable--visible  ${cid === 'c01' ? '' : 'hidden'}`} >
               <div className="palettes__container-colors">
-                <span>COLORES</span>
-                <div className="palettes">
+                <span className="palettes__title">colores</span>
+                <div>
                 <label className="palette__label input-box" htmlFor="p1">
                     <div className="input-box">
                     <input className="palette__radio js__radio1" id="p1" type="radio" value="1" name="palette" onChange={onClickPalette} checked={formObject.palette === 1} />
