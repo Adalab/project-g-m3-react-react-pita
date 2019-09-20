@@ -16,44 +16,50 @@ class CardForm extends React.Component {
 			<form className="form__container" action="POST">
 				<Collapsables >
 				<fieldset className="collapsable user_colors">
-                <div onClick={handleCollasible} className="collapsable__header collapsable__colors"  data-id="c01" > <i className="far fa-object-ungroup txt__color--orange"></i>
-                <h2 className="collapsable__title title__colors">Diseña</h2>
-                <i className={`fas fa-chevron-down txt__color--grey-dark ${cid === 'c01' ? 'collapsable--rotate' : ''}`}></i>
+            <div onClick={handleCollasible} className="collapsable__header collapsable__colors" data-id="c01" > <i className="far fa-object-ungroup txt__color--orange"></i>
+              <h2 className="collapsable__title title__colors">Diseña</h2>
+              <i className={`fas fa-chevron-down txt__color--grey-dark ${cid === 'c01' ? 'collapsable--rotate' : ''}`}></i>
+            </div>
+            <div id="c01" className={`palette collapsable__item collapsable--visible  ${cid === 'c01' ? '' : 'hidden'}`} >
+              <div className="palettes__container-colors">
+                <span className="palettes__title">colores</span>
+                <div>
+                <label className="palette__label input-box" htmlFor="p1">
+                    <div className="input-box">
+                    <input className="palette__radio js__radio1" id="p1" type="radio" value="1" name="palette" onChange={onClickPalette} checked={formObject.palette === 1} />
+                    <ul className="colors">
+                      <li className="square-color" style={{ backgroundColor: color[0] }}>dark green blue</li>
+                      <li className="square-color" style={{ backgroundColor: color[1] }}>dirty blue</li>
+                      <li className="square-color" style={{ backgroundColor: color[2] }}>hospital green</li>
+                    </ul>
+                  </div>
+                </label>
+                <label className="palette__label input-box" htmlFor="p2">
+                  <div className="input-box">
+                    <input className="palette__radio js__radio2" id="p2" type="radio" value="2"
+                      name="palette" onChange={onClickPalette} checked={formObject.palette === 2} />
+                    <ul className="colors">
+                      <li className="square-color" style={{ backgroundColor: color2[0] }}>dried blood</li>
+                      <li className="square-color" style={{ backgroundColor: color2[1] }}>rusty red</li>
+                      <li className="square-color" style={{ backgroundColor: color2[2] }}>tomato</li>
+                    </ul>
+                  </div>
+                </label>
+                <label className="palette__label input-box" htmlFor="p3">
+                  <div className="input-box">
+                    <input className="palette__radio js__radio3" id="p3" type="radio" value="3"
+                      name="palette" onChange={onClickPalette} checked={formObject.palette === 3} />
+                    <ul className="colors">
+                      <li className="square-color" style={{ backgroundColor: color3[0] }}>slate</li>
+                      <li className="square-color" style={{ backgroundColor: color3[1] }}>faded orange</li>
+                      <li className="square-color" style={{ backgroundColor: color3[2] }}>light grey blue</li>
+                    </ul>
+                  </div>
+                </label>
                 </div>
-                <div id="c01" className={`palette collapsable__item collapsable--visible  ${cid === 'c01' ? '' : 'hidden'}`} >
-                    <label className="palette__label" htmlFor="p1">colores</label>
-                    <div className="palette__container-colors">
-                        <div className="input-box">
-                            <input className="palette__radio js__radio1" id="p1" type="radio" value="1" name="palette" onChange={onClickPalette} checked={formObject.palette ===1}/>
-                            <ul className="colors">
-                                <li className="square-color" style={{ backgroundColor: color[0] }}>dark green blue</li>
-                                <li className="square-color" style={{ backgroundColor: color[1] }}>dirty blue</li>
-                                <li className="square-color" style={{ backgroundColor: color[2] }}>hospital green</li>
-                            </ul>
-                        </div>
-                        <label className="palette__label" htmlFor="p2"></label>
-                        <div className="input-box">
-                            <input className="palette__radio js__radio2" id="p2" type="radio" value="2"
-                                name="palette" onChange={onClickPalette} checked={formObject.palette ===2}/>
-                            <ul className="colors">
-                                <li className="square-color" style={{ backgroundColor: color2[0] }}>dried blood</li>
-                                <li className="square-color" style={{ backgroundColor: color2[1] }}>rusty red</li>
-                                <li className="square-color" style={{ backgroundColor: color2[2] }}>tomato</li>
-                            </ul>
-                        </div>
-                        <label className="palette__label" htmlFor="p3"></label>
-                        <div className="input-box">
-                            <input className="palette__radio js__radio3" id="p3" type="radio" value="3"
-                                name="palette" onChange={onClickPalette} checked={formObject.palette ===3} />
-                            <ul className="colors">
-                                <li className="square-color" style={{ backgroundColor: color3[0] }}>slate</li>
-                                <li className="square-color" style={{ backgroundColor: color3[1] }}>faded orange</li>
-                                <li className="square-color" style={{ backgroundColor: color3[2] }}>light grey blue</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </fieldset>
+              </div>
+            </div>
+          </fieldset>
 				</Collapsables>
 				<Collapsables>
 				<fieldset className="collapsable form__fill">
