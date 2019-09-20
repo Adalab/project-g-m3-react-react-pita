@@ -1,21 +1,24 @@
-.collapsable__colors {
-  margin: 17px 0 0 0;
+.palettes__container-colors {
+  display:flex;
+  justify-content:space-between;
 }
 
-.palette {
-  display: flex;
-  justify-content: space-between;
-}
-
-.palette__label {
-  display: block;
+.palettes__title {
   font-family: $font-open;
   font-size: $txt-sm;
   color: $grey-dark;
   text-transform: uppercase;
-  @media all and (min-width:$tablet) {
+}
+
+.collapsable__colors {
+  margin: 17px 0 0 0;
+}
+
+.palette__label {
+  display: block;
+  /*@media all and (min-width:$tablet) {
     margin-right: 110px;
-  }
+  }*/
 }
 
 .colors {
