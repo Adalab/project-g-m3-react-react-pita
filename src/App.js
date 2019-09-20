@@ -107,7 +107,6 @@ class App extends Component {
           }
         }
     }
-    // ,() => {localStorage.setItem('User', JSON.stringify(this.state))}
     )
   }
 
@@ -124,7 +123,6 @@ class App extends Component {
   sendRequest(event){
     event.preventDefault();
       const objectApi = {...this.state.formObject};
-      console.log(objectApi)
      
       const newObjectApi=JSON.stringify(objectApi)
       petition(newObjectApi)
@@ -132,7 +130,7 @@ class App extends Component {
         this.setState({
         cardURL:data.cardURL,
         successLink:data.success
-        },()=>console.log(data))
+        })
       })
 
   }
